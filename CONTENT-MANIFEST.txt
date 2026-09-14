@@ -1,0 +1,24 @@
+# CONTENT INTEGRITY MANIFEST
+# Run check-content.sh after ANY edit. Catches silently deleted sections.
+
+founder.html|operation|Now Count
+founder.html|lineage|scooter
+founder.html|decision|PrintBell
+founder.html|early|Pennsylvania
+founder.html|ventures|Print World
+founder.html|theplay|Protected by CondomPoint
+founder.html|funding|Zodiac
+founder.html|stack|EverWebinar
+founder.html|lessons|Never do things in josh
+founder.html|thesis|Every Closure
+founder.html|clicarity|intuitive execution system
+founder.html|press|Times of India
+founder.html|press-kit|Take What You
+academy.html|training|Training on Request
+academy.html|recordings|thinkific
+academy.html|funnel|3,00,000
+careers.html|roles|Automation Specialist
+careers.html|apply|sendApplication
+photobooks.html|pricing|8,000
+index.html|ventures|Clicarity
+founder.html|investor-brief|Investor brief

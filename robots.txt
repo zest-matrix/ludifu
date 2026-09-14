@@ -1,0 +1,14 @@
+# robots.txt — LUDIFU (ludifu.com)
+# Generated: March 2026
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths if any are added later
+Disallow: /admin/
+Disallow: /private/
+Disallow: /checkout/
+Disallow: /thankyou/
+
+# Sitemap location
+Sitemap: https://www.ludifu.com/sitemap.xml

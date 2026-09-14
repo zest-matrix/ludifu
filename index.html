@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     LUDIFU WEBSITE  ·  v2.18.0  ·  2026-09-12
+     File: index.html
+     Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
+     Fonts: Cormorant Garamond (display) + Outfit (body)
+     Handover doc: HANDOVER.md in repo root
+     ============================================================ -->
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="version" content="2.18.0">
+<meta name="build-date" content="2026-09-12">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUDIFU — Let Us Do It For U | Mumbai Ventures</title>
+  <meta name="description" content="LUDIFU is a Mumbai family of ventures — Clicarity, WA.Expert, LUCADEMY, ClickToWish and bespoke PhotoBooks. Let Us Do It For U."/>
+  <link rel="canonical" href="https://www.ludifu.com/"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/><noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/></noscript>
+<style>
+:root {
+  --cream:   #faf8f4;
+  --white:   #ffffff;
+  --ink:     #1e1e1e;
+  --ink2:    #3a3a3a;
+  --forest:  #2c5f3f;
+  --forest2: #3d7a53;
+  --forest-lt:#e8f2eb;
+  --gold:    #c19a3a;
+  --gold-lt: #f5e9c8;
+  --warm:    #f2ece0;
+  --muted:   #7a7464;
+  --border:  #e2ddd4;
+  --shadow:  rgba(28,28,28,0.07);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Outfit',sans-serif;
+  font-weight:400;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;line-height:1.12}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:300;
+  background:rgba(250,248,244,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 72px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:68px;
+}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo-mark{
+  width:36px;height:36px;border-radius:8px;
+  background:var(--forest);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  color:var(--gold-lt);font-size:1.05rem;font-weight:700;letter-spacing:0.5px;
+}
+.logo-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.35rem;font-weight:700;color:var(--ink);letter-spacing:1px;
+}
+.logo-text span{color:var(--forest)}
+.nav-links{display:flex;gap:30px}
+.nav-links a{
+  color:var(--muted);text-decoration:none;
+  font-size:0.875rem;font-weight:500;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--forest)}
+.nav-cta{
+  background:var(--forest);color:var(--white);
+  padding:9px 22px;border-radius:7px;
+  font-size:0.84rem;font-weight:600;text-decoration:none;
+  font-family:'Outfit',sans-serif;
+  transition:background 0.2s;
+}
+.nav-cta:hover{background:var(--forest2)}
+
+/* ── HERO ── */
+.hero{
+  padding:100px 72px 80px;
+  max-width:1300px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:0.75rem;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:22px;
+}
+.hero-kicker::before{content:'';width:30px;height:1.5px;background:var(--gold)}
+.hero h1{
+  font-size:clamp(2.8rem,4.5vw,4.2rem);
+  font-weight:700;color:var(--ink);
+  margin-bottom:22px;letter-spacing:-0.5px;
+}
+.hero h1 em{font-style:italic;color:var(--forest)}
+.hero-desc{
+  color:var(--muted);font-size:1.05rem;line-height:1.8;
+  max-width:480px;margin-bottom:36px;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px}
+.btn-primary{
+  background:var(--forest);color:var(--white);
+  padding:14px 30px;border-radius:8px;
+  font-size:0.9rem;font-weight:600;text-decoration:none;
+  font-family:'Outfit',sans-serif;
+  transition:background 0.2s,transform 0.15s;
+  display:inline-block;
+}
+.btn-primary:hover{background:var(--forest2);transform:translateY(-1px)}
+.btn-secondary{
+  border:1.5px solid var(--border);color:var(--ink2);
+  padding:14px 28px;border-radius:8px;
+  font-size:0.9rem;font-weight:500;text-decoration:none;
+  font-family:'Outfit',sans-serif;
+  transition:border-color 0.2s,color 0.2s;
+  display:inline-block;
+}
+.btn-secondary:hover{border-color:var(--forest);color:var(--forest)}
+
+/* founder note */
+.founder-note{
+  background:var(--white);border:1px solid var(--border);
+  border-left:3px solid var(--gold);
+  border-radius:10px;padding:26px 28px;
+  max-width:420px;
+}
+.founder-note p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.15rem;font-weight:400;font-style:italic;
+  color:var(--ink2);line-height:1.7;margin-bottom:14px;
+}
+.founder-sig{display:flex;align-items:center;gap:12px}
+.founder-avatar{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--forest);display:flex;align-items:center;justify-content:center;
+  color:var(--white);font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;font-weight:700;
+}
+.founder-name{font-size:0.83rem;font-weight:600;color:var(--ink)}
+.founder-title{font-size:0.76rem;color:var(--muted)}
+
+/* ── STORY STRIP ── */
+.story-bg{background:var(--forest)}
+.story-inner{
+  max-width:1300px;margin:0 auto;
+  padding:60px 72px;
+  display:grid;grid-template-columns:1fr 2fr;
+  gap:72px;align-items:center;
+}
+.story-label{
+  font-size:0.72rem;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:12px;
+}
+.story-inner h2{
+  font-size:clamp(1.8rem,2.5vw,2.4rem);
+  color:var(--white);font-weight:600;
+}
+.story-text p{
+  color:rgba(255,255,255,0.65);font-size:0.95rem;
+  line-height:1.8;margin-bottom:14px;
+}
+.story-text p:last-child{margin-bottom:0}
+.story-text strong{color:rgba(255,255,255,0.9);font-weight:600}
+
+/* ── VENTURES SECTION ── */
+.ventures-bg{background:var(--cream)}
+.ventures-inner{max-width:1300px;margin:0 auto;padding:90px 72px}
+.ventures-top{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:52px;flex-wrap:wrap;gap:20px;
+}
+.eyebrow{
+  font-size:0.72rem;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;gap:10px;margin-bottom:10px;
+}
+.eyebrow::before{content:'';width:22px;height:1.5px;background:var(--gold)}
+.section-h{
+  font-size:clamp(1.8rem,2.5vw,2.4rem);
+  font-weight:700;color:var(--ink);
+}
+.section-sub{color:var(--muted);font-size:0.93rem;line-height:1.7;max-width:460px}
+
+/* brand cards */
+.brand-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+/* large card spans 2 cols */
+.brand-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:36px 32px;
+  display:flex;flex-direction:column;
+  transition:box-shadow 0.25s,border-color 0.25s,transform 0.25s;
+  position:relative;overflow:hidden;
+  text-decoration:none;color:inherit;
+}
+.brand-card::after{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:3px;
+  background:var(--forest);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 0.3s;
+}
+.brand-card:hover{
+  box-shadow:0 12px 40px var(--shadow);
+  border-color:rgba(44,95,63,0.25);
+  transform:translateY(-3px);
+}
+.brand-card:hover::after{transform:scaleX(1)}
+.brand-card.featured{grid-column:span 2;background:var(--forest-lt)}
+.brand-card.featured::after{background:var(--gold)}
+
+.bc-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:18px}
+.bc-icon{
+  width:48px;height:48px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;
+}
+.bc-arrow{
+  font-size:0.9rem;color:var(--border);
+  transition:color 0.2s,transform 0.2s;
+}
+.brand-card:hover .bc-arrow{color:var(--forest);transform:translate(3px,-3px)}
+.bc-tag{
+  display:inline-block;
+  font-size:0.68rem;font-weight:700;letter-spacing:0.8px;
+  text-transform:uppercase;padding:3px 10px;border-radius:999px;
+  width:fit-content;margin-bottom:10px;
+}
+.bc-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:8px;
+}
+.bc-tagline{font-size:0.78rem;font-weight:600;color:var(--forest);margin-bottom:10px}
+.bc-desc{color:var(--muted);font-size:0.86rem;line-height:1.7;flex:1}
+.bc-footer{
+  margin-top:22px;padding-top:18px;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.bc-link{
+  font-size:0.83rem;font-weight:600;color:var(--forest);
+  display:flex;align-items:center;gap:5px;
+}
+
+/* photoboks pricing pill */
+.price-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--gold-lt);border:1px solid var(--gold);
+  padding:5px 14px;border-radius:999px;
+  font-size:0.75rem;font-weight:700;color:var(--gold);
+  margin-top:12px;width:fit-content;
+}
+
+/* ── ACADEMY TEASER ── */
+.academy-bg{background:var(--warm);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.academy-inner{
+  max-width:1300px;margin:0 auto;
+  padding:80px 72px;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:72px;align-items:center;
+}
+.academy-courses{display:flex;flex-direction:column;gap:10px}
+.ac-row{
+  background:var(--white);border:1px solid var(--border);border-radius:9px;
+  padding:14px 18px;display:flex;align-items:center;gap:14px;
+  transition:border-color 0.2s;cursor:pointer;text-decoration:none;color:inherit;
+}
+.ac-row:hover{border-color:var(--forest)}
+.ac-icon{font-size:1.1rem}
+.ac-name{font-size:0.88rem;font-weight:600;color:var(--ink);flex:1}
+.ac-hrs{font-size:0.76rem;color:var(--muted)}
+
+/* ── VALUES ── */
+.values-bg{background:var(--white)}
+.values-inner{max-width:1300px;margin:0 auto;padding:80px 72px}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+.value-card{padding:32px 0;border-top:2px solid var(--border);transition:border-color 0.2s}
+.value-card:hover{border-color:var(--forest)}
+.value-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.2rem;font-weight:700;color:var(--gold);
+  opacity:0.5;margin-bottom:12px;line-height:1;
+}
+.value-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:8px;
+}
+.value-desc{font-size:0.86rem;color:var(--muted);line-height:1.7}
+
+/* ── CTA ── */
+.cta-bg{background:var(--forest)}
+.cta-inner{
+  max-width:800px;margin:0 auto;
+  padding:90px 72px;text-align:center;
+}
+.cta-inner h2{
+  font-size:clamp(2rem,3vw,2.8rem);
+  color:var(--white);font-weight:700;margin-bottom:14px;
+}
+.cta-inner h2 em{font-style:italic;color:var(--gold-lt)}
+.cta-inner p{
+  color:rgba(255,255,255,0.6);font-size:0.95rem;
+  line-height:1.8;max-width:480px;margin:0 auto 36px;
+}
+.btn-cta-white{
+  background:var(--white);color:var(--forest);
+  padding:15px 34px;border-radius:8px;
+  font-size:0.95rem;font-weight:700;text-decoration:none;
+  font-family:'Outfit',sans-serif;
+  transition:opacity 0.2s;display:inline-block;
+}
+.btn-cta-white:hover{opacity:0.9}
+.btn-cta-ghost{
+  border:1.5px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);
+  padding:15px 28px;border-radius:8px;
+  font-size:0.92rem;font-weight:500;text-decoration:none;
+  font-family:'Outfit',sans-serif;
+  transition:border-color 0.2s;display:inline-block;
+}
+.btn-cta-ghost:hover{border-color:rgba(255,255,255,0.7)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);
+  padding:60px 72px 32px;
+}
+.footer-top{
+  display:grid;grid-template-columns:260px 1fr;
+  gap:80px;margin-bottom:48px;
+}
+.footer-brand-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;font-weight:700;color:var(--white);margin-bottom:10px;
+}
+.footer-brand-desc{
+  color:rgba(255,255,255,0.45);font-size:0.84rem;line-height:1.7;
+}
+.footer-cols{display:flex;gap:56px;flex-wrap:wrap}
+.footer-col h5{
+  font-size:0.7rem;font-weight:700;letter-spacing:1.8px;
+  text-transform:uppercase;color:rgba(255,255,255,0.3);
+  margin-bottom:18px;
+}
+.footer-col a{
+  display:block;color:rgba(255,255,255,0.55);text-decoration:none;
+  font-size:0.85rem;margin-bottom:11px;transition:color 0.2s;
+}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:24px;display:flex;
+  justify-content:space-between;align-items:center;
+  font-size:0.77rem;color:rgba(255,255,255,0.35);
+  flex-wrap:wrap;gap:10px;
+}
+
+/* ── ANIMATIONS ── */
+.fade-up{
+  opacity:0;transform:translateY(22px);
+  animation:fadeUp 0.7s ease forwards;
+}
+.fade-up:nth-child(1){animation-delay:0.05s}
+.fade-up:nth-child(2){animation-delay:0.15s}
+.fade-up:nth-child(3){animation-delay:0.25s}
+.fade-up:nth-child(4){animation-delay:0.35s}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+/* ── RESPONSIVE ── */
+
+  /* Venture teaser sections responsive */
+  #clicarity > div > div,
+  #wa-expert > div > div,
+  #clicktowish > div > div {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    padding: 60px 24px !important;
+  }
+  #clicarity > div,
+  #wa-expert > div,
+  #clicktowish > div {
+    padding: 0 !important;
+  }
+@media(max-width:960px){
+  nav{padding:0 24px}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:70px 24px 50px;gap:40px}
+  .story-inner{grid-template-columns:1fr;padding:50px 24px;gap:28px}
+  .ventures-inner{padding:60px 24px}
+  .brand-grid{grid-template-columns:1fr}
+  .brand-card.featured{grid-column:span 1}
+  .academy-inner{grid-template-columns:1fr;padding:60px 24px;gap:40px}
+  .values-inner{padding:60px 24px}
+  .values-grid{grid-template-columns:1fr;gap:0}
+  .cta-inner{padding:60px 24px}
+  footer{padding:48px 24px 28px}
+  .footer-top{grid-template-columns:1fr;gap:36px}
+}
+
+  /* press-strip-mq */
+  @media(max-width:980px){
+    div[style*="As featured"] {}
+  }
+</style>
+
+  <!-- Open Graph -->
+  <meta property="og:type"         content="website"/>
+  <meta property="og:url"          content="https://www.ludifu.com/"/>
+  <meta property="og:title"        content="LUDIFU — Let Us Do It For U"/>
+  <meta property="og:description"  content="A Mumbai family of ventures spanning EdTech, business operations, WhatsApp automation, and premium custom photobooks."/>
+  <meta property="og:image"        content="https://www.ludifu.com/og-image.jpg"/>
+  <meta property="og:image:width"  content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:locale"       content="en_IN"/>
+  <meta property="og:site_name"    content="LUDIFU"/>
+  <!-- Twitter / X card -->
+  <meta name="twitter:card"        content="summary_large_image"/>
+  <meta name="twitter:title"       content="LUDIFU — Let Us Do It For U"/>
+  <meta name="twitter:description" content="A Mumbai family of ventures spanning EdTech, business operations, WhatsApp automation, and premium custom photobooks."/>
+  <meta name="twitter:image"       content="https://www.ludifu.com/og-image.jpg"/>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="alternate icon" href="/favicon.ico"/>
+
+  <!-- Preconnect — must be before Google Fonts for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap"/>
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow"/>
+
+  <!-- Cookie consent styles -->
+  <style>
+    #cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:9999;
+      background:#2a1f14;color:#f5f0e8;padding:14px 24px;
+      display:flex;align-items:center;justify-content:space-between;
+      gap:16px;flex-wrap:wrap;font-family:inherit;font-size:0.82rem;
+      box-shadow:0 -2px 16px rgba(0,0,0,0.2);
+      transform:translateY(0);transition:transform 0.3s ease;}
+    #cookie-bar.hidden{transform:translateY(110%);}
+    #cookie-bar p{margin:0;line-height:1.6;flex:1;min-width:220px;}
+    #cookie-bar a{color:#c9a84c;text-decoration:underline;}
+    #cookie-bar button{background:#c9a84c;color:#2a1f14;border:none;cursor:pointer;
+      padding:9px 20px;border-radius:3px;font-size:0.78rem;font-weight:600;
+      letter-spacing:1px;text-transform:uppercase;white-space:nowrap;font-family:inherit;}
+    #cookie-bar button:hover{opacity:0.88;}
+    #wa-float:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(37,211,102,0.5);}
+    a:focus-visible,button:focus-visible{outline:2px solid #4e7055;outline-offset:3px;}
+  
+  /* Mobile hamburger nav */
+  @media(max-width:768px){
+    .nav-links-desktop{display:none!important;}
+    .hamburger{display:flex!important;}
+    .mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;
+      background:rgba(244,239,229,0.98);backdrop-filter:blur(12px);
+      z-index:499;flex-direction:column;padding:24px 28px;gap:4px;overflow-y:auto;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{color:var(--ink,#1e1508);text-decoration:none;font-size:1.1rem;
+      font-weight:500;padding:14px 0;border-bottom:1px solid var(--border,#d5cdbf);}
+    .mobile-menu a:last-child{border-bottom:none;}
+    .mobile-menu a:hover{color:var(--sage,#4e7055);}
+  }
+  @media(min-width:769px){
+    .hamburger{display:none!important;}
+    .mobile-menu{display:none!important;}
+  }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"LUDIFU","alternateName":"Let Us Do It For U","url":"https://www.ludifu.com","logo":"https://www.ludifu.com/og-image.jpg","description":"Mumbai-based family of ventures: LUCADEMY, Clicarity, WA.Expert, ClickToWish, and LUDIFU PhotoBooks.","address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressRegion":"Maharashtra","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+91-98678-00451","contactType":"Customer Support"}}</script>
+
+<!-- ══════════════════════════════════════════════════════════
+     GOOGLE ANALYTICS 4 — NOT YET ACTIVE
+     Replace G-XXXXXXXXXX with your real Measurement ID from
+     analytics.google.com, then uncomment the block below.
+     Leaving a placeholder ID active would send data nowhere.
+     ══════════════════════════════════════════════════════════
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+</head>
+<body>
+<a href="#main-content"
+   style="position:absolute;top:-100px;left:16px;z-index:10000;
+     background:#2a1f14;color:#f5f0e8;padding:10px 18px;border-radius:3px;
+     font-size:0.82rem;font-weight:600;text-decoration:none;transition:top 0.2s;"
+   onfocus="this.style.top='16px'"
+   onblur="this.style.top='-100px'">Skip to main content</a>
+
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">L</div>
+    <span class="logo-text">LUDI<span>FU</span></span>
+  </a>
+  <div class="nav-links nav-links-desktop">
+    <a href="#ventures">Our Ventures</a>
+    <a href="academy.html">Academy</a>
+    <a href="#clicarity">Clicarity</a>
+    <a href="photobooks.html">PhotoBooks</a>
+    <a href="#story">Our Story</a>
+    <a href="founder.html">Founder</a>
+    <a href="careers.html">Careers</a>
+  </div>
+<button class="hamburger" id="ham-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"
+  style="display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center;">
+  <span style="width:22px;height:2px;background:var(--ink,#1e1508);border-radius:2px;transition:all 0.25s;" id="hb1"></span>
+  <span style="width:22px;height:2px;background:var(--ink,#1e1508);border-radius:2px;transition:all 0.25s;" id="hb2"></span>
+  <span style="width:22px;height:2px;background:var(--ink,#1e1508);border-radius:2px;transition:all 0.25s;" id="hb3"></span>
+</button>
+</nav><div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+  <a href="#ventures">Our Ventures</a>
+  <a href="academy.html">Academy</a>
+  <a href="https://www.clicarity.com" target="_blank" rel="noopener">Clicarity</a>
+  <a href="photobooks.html">PhotoBooks</a>
+  <a href="#story">Our Story</a>
+  <a href="founder.html">The Founder</a>
+  <a href="careers.html">Careers</a>
+  <a href="terms.html">Terms & Conditions</a>
+  <a href="privacy.html">Privacy Policy</a>
+</div>
+
+<div id="main-content">
+
+<!-- PRESS STRIP -->
+<div style="background:#1e1e1e;border-bottom:1px solid rgba(255,255,255,.08)">
+  <div style="max-width:1300px;margin:0 auto;padding:15px 72px;display:flex;
+    align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;text-align:center">
+    <span style="font-size:.68rem;letter-spacing:2.5px;text-transform:uppercase;
+      color:rgba(255,255,255,.4);font-weight:500">As featured in</span>
+    <span style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;
+      color:#fff;letter-spacing:.5px">The Times of India</span>
+    <span style="width:1px;height:16px;background:rgba(255,255,255,.2)"></span>
+    <span style="font-size:.76rem;color:#c9a84c">Page 2 · Mumbai · Aug 2020</span>
+    <a href="academy.html" style="font-size:.74rem;color:rgba(255,255,255,.55);
+      text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:1px">Read the story →</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section style="background:var(--white)">
+<div class="hero">
+  <div>
+    <div class="hero-kicker fade-up">Mumbai · Est. 2020 · Let Us Do It For U</div>
+    <h1 class="fade-up">We Build Things<br>That <em>Actually</em><br>Help People.</h1>
+    <p class="hero-desc fade-up">LUDIFU is a family of focused ventures — each solving a real problem in education, business operations, communication, or creativity. We're a startup that tried many things, kept what mattered, and kept going.</p>
+    <div class="hero-actions fade-up">
+      <a href="#ventures" class="btn-primary">See Our Ventures</a>
+      <a href="#story" class="btn-secondary">Our Story</a>
+    </div>
+  </div>
+  <div class="fade-up">
+    <div class="founder-note">
+      <p>"We didn't start with a grand plan. We started with a drive to be useful — and LUDIFU grew from there, one venture at a time."</p>
+      <div class="founder-sig">
+        <div class="founder-avatar">L</div>
+        <div>
+          <div class="founder-name">The LUDIFU Team</div>
+          <div class="founder-title">Mumbai, India</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- OUR STORY -->
+<section class="story-bg" id="story">
+  <div class="story-inner">
+    <div>
+      <div class="story-label">Our Story</div>
+      <h2>A Startup That<br>Kept Showing Up.</h2>
+    </div>
+    <div class="story-text">
+      <p>LUDIFU — <strong>Let Us Do It For U</strong> — started with a simple belief: that there are people and businesses who need things done well, and we could be the ones to do it.</p>
+      <p>Over the years, we built tools for business operations, courses for career growth, automation for communication, and products for preserving memories. Not everything we tried worked. But the things that did — we doubled down on them.</p>
+      <p>Today, LUDIFU is a <strong>family of five ventures</strong>: each independent, each focused, each built around solving a genuine problem. We're not a big company. We're a committed team that takes pride in every product we ship.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VENTURES -->
+<section class="ventures-bg" id="ventures">
+<div class="ventures-inner">
+  <div class="ventures-top">
+    <div>
+      <div class="eyebrow">Our Family of Ventures</div>
+      <h2 class="section-h">Five Products.<br>One Purpose.</h2>
+    </div>
+    <p class="section-sub">Each venture under LUDIFU was built to solve something specific. Click any card to explore further.</p>
+  </div>
+
+  <div class="brand-grid">
+
+    <!-- LUDIFU ACADEMY — featured -->
+    <a href="academy.html" class="brand-card featured">
+      <div class="bc-header">
+        <div class="bc-icon" style="background:#e8f2eb">🎓</div>
+        <span class="bc-arrow">↗</span>
+      </div>
+      <span class="bc-tag" style="background:#e8f2eb;color:#2c5f3f">Education</span>
+      <div class="bc-name">LUCADEMY</div>
+      <div class="bc-tagline">Live certified training for real career outcomes.</div>
+      <div class="bc-desc">Instructor-led, Zoom-based courses in Data Analytics, Digital Marketing, Python, Power BI, SQL, Tableau and more. Each course includes bonus hours and a recognised certificate. Plus free 1-hour workshops — no commitment needed.</div>
+      <div class="bc-footer">
+        <span class="bc-link">Explore Courses →</span>
+        <span style="font-size:0.78rem;color:var(--muted)">12+ Courses · Live · Certified</span>
+      </div>
+    </a>
+
+    <!-- CLICARITY -->
+    <a href="https://www.clicarity.com" target="_blank" rel="noopener noreferrer" class="brand-card">
+      <div class="bc-header">
+        <div class="bc-icon" style="background:#e3f2fd">📋</div>
+        <span class="bc-arrow">↗</span>
+      </div>
+      <span class="bc-tag" style="background:#e3f2fd;color:#1565c0">Operations · SaaS</span>
+      <div class="bc-name">Clicarity</div>
+      <div class="bc-tagline">Solve JSR & TAT — the two biggest ops problems in every SME.</div>
+      <div class="bc-desc">Real-time work tracking for manufacturing, printing, packaging, steel and engineering businesses. Two screens, unlimited licences, no training required. Featured in PrintWeek and Print Bulletin.</div>
+      <div class="bc-footer">
+        <span class="bc-link">Visit Clicarity →</span>
+        <span style="font-size:0.78rem;color:var(--muted)">clicarity.com</span>
+      </div>
+    </a>
+
+    <!-- WA.EXPERT -->
+    <a href="http://www.wa.expert" target="_blank" rel="noopener noreferrer" class="brand-card">
+      <div class="bc-header">
+        <div class="bc-icon" style="background:#e8f5e9">💬</div>
+        <span class="bc-arrow">↗</span>
+      </div>
+      <span class="bc-tag" style="background:#e8f5e9;color:#2e7d32">Automation</span>
+      <div class="bc-name">WA.Expert</div>
+      <div class="bc-tagline">WhatsApp Business, done properly.</div>
+      <div class="bc-desc">Official WhatsApp Business API platform — AI chatbots, bulk campaigns, team inbox, mini CRM and 1,000+ integrations including Shopify, Zoho, Tally and Razorpay. Live in 24 hours.</div>
+      <div class="bc-footer">
+        <span class="bc-link">Visit WA.Expert →</span>
+        <span style="font-size:0.78rem;color:var(--muted)">wa.expert</span>
+      </div>
+    </a>
+
+    <!-- CLICKTOWISH -->
+    <a href="https://www.clicktowish.com" target="_blank" rel="noopener noreferrer" class="brand-card">
+      <div class="bc-header">
+        <div class="bc-icon" style="background:#fce4ec">🎉</div>
+        <span class="bc-arrow">↗</span>
+      </div>
+      <span class="bc-tag" style="background:#fce4ec;color:#c62828">Relationships</span>
+      <div class="bc-name">ClickToWish</div>
+      <div class="bc-tagline">Never miss a moment that matters.</div>
+      <div class="bc-desc">Automated WhatsApp wishes for birthdays, anniversaries, and milestones — personalised and timely, for personal and corporate relationships, globally.</div>
+      <div class="bc-footer">
+        <span class="bc-link">Visit ClickToWish →</span>
+        <span style="font-size:0.78rem;color:var(--muted)">clicktowish.com</span>
+      </div>
+    </a>
+
+    <!-- PHOTOBOOKS -->
+    <a href="photobooks.html" class="brand-card">
+      <div class="bc-header">
+        <div class="bc-icon" style="background:var(--gold-lt)">📖</div>
+        <span class="bc-arrow">↗</span>
+      </div>
+      <span class="bc-tag" style="background:var(--gold-lt);color:var(--gold)">Premium · Exclusive</span>
+      <div class="bc-name">LUDIFU PhotoBooks</div>
+      <div class="bc-tagline">Custom coffee table books. Beautifully made.</div>
+      <div class="bc-desc">Bespoke, handcrafted photobooks and coffee table books for weddings, families, corporates, and collectors. Every book is one of a kind.</div>
+      <div class="price-pill">Starting ₹8,000 · 10 pages · 10×10"</div>
+      <div class="bc-footer" style="margin-top:16px">
+        <span class="bc-link">Explore PhotoBooks →</span>
+        <span style="font-size:0.78rem;color:var(--muted)">By enquiry only</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+</section>
+
+<!-- ACADEMY TEASER -->
+<section class="academy-bg" id="academy">
+<div class="academy-inner">
+  <div>
+    <div class="eyebrow">LUCADEMY</div>
+    <h2 class="section-h" style="font-size:clamp(1.8rem,2.8vw,2.6rem)">Learn Live.<br>Get Certified.<br>Grow Your Career.</h2>
+    <p style="color:var(--muted);font-size:0.93rem;line-height:1.75;margin-top:14px;margin-bottom:28px">Our most active venture. Real instructors, live Zoom sessions, in-demand skills — with free 1-hour workshops anyone can join today.</p>
+    <a href="academy.html" class="btn-primary">Go to LUCADEMY →</a>
+  </div>
+  <div class="academy-courses">
+    <a class="ac-row" href="academy.html"><span class="ac-icon">📊</span><span class="ac-name">Data Science with Power BI</span><span class="ac-hrs">30 hrs + 60 bonus</span></a>
+    <a class="ac-row" href="academy.html"><span class="ac-icon">🐍</span><span class="ac-name">Python for Data Analytics</span><span class="ac-hrs">30 hrs + 54 bonus</span></a>
+    <a class="ac-row" href="academy.html"><span class="ac-icon">📈</span><span class="ac-name">Performance Marketing</span><span class="ac-hrs">30 hrs + 60 bonus</span></a>
+    <a class="ac-row" href="academy.html"><span class="ac-icon">🎯</span><span class="ac-name">Google Ads Specialist</span><span class="ac-hrs">Certified</span></a>
+    <a class="ac-row" href="academy.html"><span class="ac-icon">🗂️</span><span class="ac-name">Tableau & SQL</span><span class="ac-hrs">Combined Track</span></a>
+    <a class="ac-row" href="academy.html" style="background:var(--forest-lt);border-color:rgba(44,95,63,0.2)"><span class="ac-icon">✦</span><span class="ac-name" style="color:var(--forest)">View all 12+ courses</span><span class="ac-hrs" style="color:var(--forest)">+ Free Workshops</span></a>
+  </div>
+</div>
+</section>
+
+<!-- PHOTOBOOKS SECTION -->
+<section style="background:var(--white)" id="photobooks">
+<div style="max-width:1300px;margin:0 auto;padding:90px 72px">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center">
+    <div>
+      <div class="eyebrow">LUDIFU PhotoBooks</div>
+      <h2 class="section-h" style="font-size:clamp(1.8rem,2.8vw,2.6rem)">Some Memories<br>Deserve More Than<br><em>a Screen.</em></h2>
+      <p style="color:var(--muted);font-size:0.93rem;line-height:1.78;margin-top:14px;margin-bottom:28px">
+        We craft bespoke, premium coffee table books and photobooks for weddings, families, corporates, and collectors. Each book is custom-designed, exclusively yours, and built to last a lifetime.
+      </p>
+      <p style="color:var(--muted);font-size:0.93rem;line-height:1.78;margin-bottom:32px">
+        Sizes range from <strong style="color:var(--ink)">10×10"</strong> to <strong style="color:var(--ink)">12×12"</strong> closed — opening horizontally to 10×20" or 12×24". Every book is printed on premium stock, bound by hand, and designed around your story.
+      </p>
+      <a href="photobooks.html" class="btn-primary">Explore PhotoBooks →</a>
+      <a href="https://wa.me/919867800451?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20custom%20PhotoBook" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-left:12px">Enquire on WhatsApp</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:28px 28px 20px">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:18px">Pricing — Transparent & Clear</div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid var(--border)">
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;color:var(--ink)">Base Book — 10 Pages</div>
+              <div style="font-size:0.78rem;color:var(--muted)">10×10" or 12×12" closed size</div>
+            </div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--forest)">₹8,000</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid var(--border)">
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;color:var(--ink)">Additional Pages</div>
+              <div style="font-size:0.78rem;color:var(--muted)">Per side of the book</div>
+            </div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--forest)">₹800<span style="font-size:0.9rem;color:var(--muted)">/side</span></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;color:var(--ink)">Opens Horizontally</div>
+              <div style="font-size:0.78rem;color:var(--muted)">10×20" or 12×24" spread</div>
+            </div>
+            <span style="font-size:0.78rem;font-weight:600;background:var(--gold-lt);color:var(--gold);padding:4px 12px;border-radius:999px">Exclusive</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--forest);border-radius:12px;padding:22px 28px;display:flex;align-items:center;gap:14px">
+        <span style="font-size:1.6rem">💬</span>
+        <div>
+          <div style="font-size:0.85rem;font-weight:600;color:var(--white)">Every book is made to order.</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.6)">Reach us on WhatsApp to discuss your vision.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- CLICARITY SECTION -->
+<section style="background:var(--linen);border-top:1px solid var(--border)" id="clicarity">
+<div style="max-width:1300px;margin:0 auto;padding:90px 72px">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center">
+    <div>
+      <div class="eyebrow">Clicarity</div>
+      <h2 class="section-h" style="font-size:clamp(1.8rem,2.8vw,2.6rem)">Solve JSR & TAT —<br>the Two Biggest Ops<br><em>Problems in Every SME.</em></h2>
+      <p style="color:var(--muted);font-size:0.93rem;line-height:1.78;margin-top:14px;margin-bottom:28px">
+        Clicarity is a light manufacturing execution system — the tracking layer that sits underneath your ERP, CRM or Google Sheets. Every order, every stage, recorded as it happens. Two screens, unlimited licences, and nobody needs training twice.
+      </p>
+      <a href="https://www.clicarity.com" target="_blank" rel="noopener noreferrer" class="btn-primary">Visit Clicarity →</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:18px">What Clicarity Solves</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:flex-start;gap:14px;padding-bottom:12px;border-bottom:1px solid var(--border)">
+            <div style="width:38px;height:38px;border-radius:8px;background:var(--forest-lt);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">📋</div>
+            <div><div style="font-weight:600;font-size:0.9rem;color:var(--ink)">Workflows, Orders &amp; Inventory</div><div style="font-size:0.8rem;color:var(--muted);margin-top:3px">Every order from intake to dispatch, live stock with reorder alerts, across multiple godowns.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding-bottom:12px;border-bottom:1px solid var(--border)">
+            <div style="width:38px;height:38px;border-radius:8px;background:var(--forest-lt);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">⏱️</div>
+            <div><div style="font-weight:600;font-size:0.9rem;color:var(--ink)">Sits under what you already run</div><div style="font-size:0.8rem;color:var(--muted);margin-top:3px">Your ERP runs the office. Clicarity runs the work — and the data flows back up on its own.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px">
+            <div style="width:38px;height:38px;border-radius:8px;background:var(--forest-lt);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">🏭</div>
+            <div><div style="font-weight:600;font-size:0.9rem;color:var(--ink)">Built for Indian industry</div><div style="font-size:0.8rem;color:var(--muted);margin-top:3px">Manufacturing, printing, corrugation, pharma packaging, steel processing, engineering and export.</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--forest);border-radius:12px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap">
+        <div>
+          <div style="font-size:0.85rem;font-weight:600;color:var(--white)">Eighteen minutes. Bring anything you are working on.</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.6)">We will show you exactly where it has been sitting, and for how long.</div>
+        </div>
+        <a href="https://calendly.com/clicarity/demo" target="_blank" rel="noopener noreferrer"
+           style="background:rgba(255,255,255,0.15);color:var(--white);padding:9px 18px;
+             border-radius:6px;font-size:0.78rem;font-weight:600;letter-spacing:1px;
+             text-transform:uppercase;text-decoration:none;white-space:nowrap;
+             transition:background 0.2s;"
+           onmouseover="this.style.background='rgba(255,255,255,0.25)'"
+           onmouseout="this.style.background='rgba(255,255,255,0.15)'">Book Demo →</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- WA.EXPERT SECTION -->
+<section style="background:var(--white);border-top:1px solid var(--border)" id="wa-expert">
+<div style="max-width:1300px;margin:0 auto;padding:90px 72px">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:28px">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:18px">What WA.Expert Does</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:flex-start;gap:14px;padding-bottom:12px;border-bottom:1px solid var(--border)">
+            <div style="width:38px;height:38px;border-radius:8px;background:#e8f5e9;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">🤖</div>
+            <div><div style="font-weight:600;font-size:0.9rem;color:var(--ink)">No-code Chatbot Builder</div><div style="font-size:0.8rem;color:var(--muted);margin-top:3px">Drag-and-drop flows that qualify leads, send catalogues and escalate to a human at the right moment.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding-bottom:12px;border-bottom:1px solid var(--border)">
+            <div style="width:38px;height:38px;border-radius:8px;background:#e8f5e9;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">📢</div>
+            <div><div style="font-weight:600;font-size:0.9rem;color:var(--ink)">Targeted Campaigns</div><div style="font-size:0.8rem;color:var(--muted);margin-top:3px">Segment, schedule and personalise — then re-target based on who actually opened.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px">
+            <div style="width:38px;height:38px;border-radius:8px;background:#e8f5e9;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">📊</div>
+            <div><div style="font-weight:600;font-size:0.9rem;color:var(--ink)">Team Inbox &amp; Mini CRM</div><div style="font-size:0.8rem;color:var(--muted);margin-top:3px">One number, every agent with their own login, assignments and full conversation history.</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--forest);border-radius:12px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap">
+        <div>
+          <div style="font-size:0.85rem;font-weight:600;color:var(--white)">WhatsApp Business API.</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.6)">Built for growing businesses that want to stay connected.</div>
+        </div>
+        <a href="http://www.wa.expert" target="_blank" rel="noopener noreferrer"
+           style="background:rgba(255,255,255,0.15);color:var(--white);padding:9px 18px;
+             border-radius:6px;font-size:0.78rem;font-weight:600;letter-spacing:1px;
+             text-transform:uppercase;text-decoration:none;white-space:nowrap;"
+           onmouseover="this.style.background='rgba(255,255,255,0.25)'"
+           onmouseout="this.style.background='rgba(255,255,255,0.15)'">Visit WA.Expert →</a>
+      </div>
+    </div>
+    <div>
+      <div class="eyebrow">WA.Expert</div>
+      <h2 class="section-h" style="font-size:clamp(1.8rem,2.8vw,2.6rem)">WhatsApp Business,<br><em>Done Properly.</em></h2>
+      <p style="color:var(--muted);font-size:0.93rem;line-height:1.78;margin-top:14px;margin-bottom:28px">
+        Your customers live on WhatsApp. WA.Expert gives your team the official Business API infrastructure to meet them there — AI chatbots, campaigns, a shared team inbox and a CRM, on one platform at one honest price.
+      </p>
+      <a href="http://www.wa.expert" target="_blank" rel="noopener noreferrer" class="btn-primary">Visit WA.Expert →</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CLICKTOWISH SECTION -->
+<section style="background:var(--linen);border-top:1px solid var(--border)" id="clicktowish">
+<div style="max-width:1300px;margin:0 auto;padding:90px 72px">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center">
+    <div>
+      <div class="eyebrow">ClickToWish</div>
+      <h2 class="section-h" style="font-size:clamp(1.8rem,2.8vw,2.6rem)">Never Miss a<br>Moment That<br><em>Matters.</em></h2>
+      <p style="color:var(--muted);font-size:0.93rem;line-height:1.78;margin-top:14px;margin-bottom:28px">
+        Birthdays. Anniversaries. Milestones. ClickToWish sends personalised, timely WhatsApp wishes to your clients, customers, and loved ones — automatically. So you stay connected to what matters, even when life gets busy.
+      </p>
+      <a href="https://www.clicktowish.com" target="_blank" rel="noopener noreferrer" class="btn-primary">Visit ClickToWish →</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:18px">How It Works</div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--stone2);min-width:28px">01</div>
+            <div><div style="font-weight:600;font-size:0.88rem;color:var(--ink)">Add your contacts & dates</div><div style="font-size:0.8rem;color:var(--muted);margin-top:3px">Birthdays, anniversaries, renewal dates — any occasion that matters.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--stone2);min-width:28px">02</div>
+            <div><div style="font-weight:600;font-size:0.88rem;color:var(--ink)">Set your message</div><div style="font-size:0.8rem;color:var(--muted);margin-top:3px">Personalise the wish — or use one of our thoughtful templates.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;padding:14px 0">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--stone2);min-width:28px">03</div>
+            <div><div style="font-weight:600;font-size:0.88rem;color:var(--ink)">It sends itself</div><div style="font-size:0.8rem;color:var(--muted);margin-top:3px">On the right day, at the right time — via WhatsApp, automatically.</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--terra-lt,#f5ede9);border:1px solid rgba(168,79,46,0.2);border-radius:12px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap">
+        <div>
+          <div style="font-size:0.85rem;font-weight:600;color:var(--terra,#a84f2e)">For personal & corporate use.</div>
+          <div style="font-size:0.8rem;color:var(--stone);margin-top:3px">Works globally across countries and time zones.</div>
+        </div>
+        <a href="https://www.clicktowish.com" target="_blank" rel="noopener noreferrer"
+           style="background:var(--terra,#a84f2e);color:var(--white);padding:9px 18px;
+             border-radius:6px;font-size:0.78rem;font-weight:600;letter-spacing:1px;
+             text-transform:uppercase;text-decoration:none;white-space:nowrap;"
+           onmouseover="this.style.opacity='0.88'"
+           onmouseout="this.style.opacity='1'">Try ClickToWish →</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- VALUES -->
+<section class="values-bg">
+<div class="values-inner">
+  <div class="eyebrow">What We Stand For</div>
+  <h2 class="section-h">The LUDIFU Way</h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-num">01</div>
+      <div class="value-title">We Solve Real Problems</div>
+      <div class="value-desc">Every LUDIFU venture was born from a genuine frustration or a genuine need — not a trend. We build things because they should exist.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-num">02</div>
+      <div class="value-title">We Keep It Simple</div>
+      <div class="value-desc">Whether it's a two-screen job tracker or a 1-hour free workshop — we believe simplicity is a sign of clarity, not laziness.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-num">03</div>
+      <div class="value-title">We Stay Committed</div>
+      <div class="value-desc">Startups are hard. We've had our share of detours. But we've stayed honest, stayed focused, and kept showing up for the people who count on us.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-bg">
+<div class="cta-inner">
+  <h2>Not Sure Where<br>to <em>Start?</em></h2>
+  <p>Whether you want to learn a new skill, track your operations better, automate communication, or preserve a memory — there's a LUDIFU venture for you.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+    <a href="academy.html" class="btn-cta-white">Start Learning Free →</a>
+    <a href="https://wa.me/919867800451" target="_blank" rel="noopener noreferrer" class="btn-cta-ghost">Talk to Us on WhatsApp</a>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+
+</div><!-- /#main-content -->
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">LUDIFU</div>
+      <p class="footer-brand-desc">Let Us Do It For U — a family of ventures committed to education, clarity, connection and creativity. Mumbai, India.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h5>Ventures</h5>
+        <a href="academy.html">LUCADEMY</a>
+        <a href="#clicarity">Clicarity</a>
+        <a href="#wa-expert">WA.Expert</a>
+        <a href="#clicktowish" target="_blank" rel="noopener noreferrer">ClickToWish</a>
+        <a href="photobooks.html">LUDIFU PhotoBooks</a>
+      </div>
+      <div class="footer-col">
+        <h5>Academy</h5>
+        <a href="academy.html">All Courses</a>
+        <a href="academy.html#workshops">Free Workshops</a>
+        <a href="https://ludifurecordings.thinkific.com/collections" target="_blank" rel="noopener">Recordings</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="academy.html">LUCADEMY — Our Story</a>
+        <a href="#story">Our Story</a>
+        <a href="founder.html">The Founder</a>
+        <a href="careers.html">Careers</a>
+        <a href="https://wa.me/919867800451" target="_blank" rel="noopener noreferrer">Contact Us</a>
+        <a href="photobooks.html">PhotoBooks Enquiry</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 LUDIFU. All rights reserved. Mumbai, India.</span>
+    <span>Built with purpose.</span>
+    </div>
+    <div class="footer-links-legal" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:10px;">
+      <a href="terms.html" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.76rem;transition:color 0.2s;">Terms &amp; Conditions</a>
+      <a href="privacy.html" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.76rem;">Privacy Policy</a>
+      <a href="refund-policy.html" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.76rem;">Refund Policy</a>
+      <a href="shipping-policy.html" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.76rem;">Shipping Policy</a>
+    
+  </div>
+</footer>
+
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/919867800451?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20LUDIFU"
+   target="_blank" rel="noopener" id="wa-float"
+   aria-label="Chat with LUDIFU on WhatsApp"
+   style="position:fixed;bottom:80px;right:24px;z-index:9998;
+     width:52px;height:52px;border-radius:50%;background:#25D366;
+     display:flex;align-items:center;justify-content:center;
+     box-shadow:0 4px 16px rgba(37,211,102,0.4);text-decoration:none;
+     transition:transform 0.2s,box-shadow 0.2s;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true" focusable="false">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.522 5.838L.057 23.804a.5.5 0 0 0 .61.61l5.966-1.465A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.497-5.2-1.367l-.373-.214-3.879.952.969-3.758-.228-.385A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+
+<!-- Cookie consent banner -->
+<div id="cookie-bar" role="banner" aria-label="Cookie consent notice">
+  <p>We use cookies to improve your experience and analyse site traffic. By continuing to use this site, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+  <button onclick="document.getElementById('cookie-bar').classList.add('hidden');try{localStorage.setItem('ludifu-cookie-ok','1');}catch(e){}" aria-label="Accept cookies and close banner">Accept &amp; Close</button>
+</div>
+<script>try{if(localStorage.getItem('ludifu-cookie-ok'))document.getElementById('cookie-bar').classList.add('hidden');}catch(e){}</script>
+
+<script>
+(function(){
+  var btn=document.getElementById('ham-btn');
+  var menu=document.getElementById('mobile-menu');
+  if(!btn||!menu)return;
+  btn.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    document.getElementById('hb1').style.transform=open?'translateY(7px) rotate(45deg)':'';
+    document.getElementById('hb2').style.opacity=open?'0':'1';
+    document.getElementById('hb3').style.transform=open?'translateY(-7px) rotate(-45deg)':'';
+  });
+  document.addEventListener('click',function(e){
+    if(!btn.contains(e.target)&&!menu.contains(e.target)){
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      document.getElementById('hb1').style.transform='';
+      document.getElementById('hb2').style.opacity='1';
+      document.getElementById('hb3').style.transform='';
+    }
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&menu.classList.contains('open')){
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.focus();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
