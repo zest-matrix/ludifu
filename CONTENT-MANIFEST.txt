@@ -22,3 +22,4 @@ careers.html|apply|sendApplication
 photobooks.html|pricing|8,000
 index.html|ventures|Clicarity
 founder.html|investor-brief|Investor brief
+founder.html|the-question|What would you do

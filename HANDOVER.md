@@ -1,6 +1,6 @@
 # LUDIFU Website — Handover Document
 
-**Version:** 2.18.0
+**Version:** 2.20.0
 **Last updated:** 12 September 2026
 **Owner:** Puneet Rawat, Founder — LUDIFU, Mumbai
 **Contact:** +91 98678 00451 (WhatsApp)
@@ -254,7 +254,9 @@ These must be resolved before or shortly after launch.
 
 | Version | Date | Changes |
 |---|---|---|
-| **2.18.0** | 14 Sep 2026 | New **#investor-brief** section. Two copy-ready blocks: a ~230-word forwardable investor brief written in neutral third person for pasting into an IC note, and a **verification index** listing every claim on the page with where to check it independently. Includes an explicit statement that Clicarity financials are withheld from the site by design and shared under NDA. `/investors` redirects here. |
+| **2.20.0** | 14 Sep 2026 | New **#the-question** section — the Harsh Mariwala lunch (won via ASCENT referral campaign, ~75 referrals) and the advice that turned The Leaf around: one-on-one, visibly, *"what would you do if you were in my shoes?"* Team 65→25, operation improved. ASCENT membership since 2016 and Trust Group facilitator 6 of 10 years added as credentials. The Leaf card expanded with real scale: 150 seats, 450-item menu, 250+ inventory lines, 45 of 65 staff being the franchiser's rotating training pool. **⚠ Trust Group member names deliberately NOT published — ASCENT Trust Groups are confidential by design. Do not add without written consent from each member.** |
+| 2.19.0 | 14 Sep 2026 | Added two **WhatsApp community-group** bios to #press-kit — written conversationally, leading with the venture list and the closure reasons rather than credentials, closing on "not selling anything". Uses WhatsApp single-asterisk bold. Eight copy blocks total on the page. |
+| 2.18.0 | 14 Sep 2026 | New **#investor-brief** section. Two copy-ready blocks: a ~230-word forwardable investor brief written in neutral third person for pasting into an IC note, and a **verification index** listing every claim on the page with where to check it independently. Includes an explicit statement that Clicarity financials are withheld from the site by design and shared under NDA. `/investors` redirects here. |
 | 2.17.0 | 14 Sep 2026 | **Full audit vs Checklist v2.0 — 47% → 91% on testable items.** Fixed: titles trimmed under 60ch (3 pages), meta descriptions to 50–160ch (5 pages), 404 given canonical/OG/Twitter, LCP font preload on all pages, **CSP + HSTS headers added**, WebP generated for all images with `<picture>` fallback (~45% smaller), GA4 block added commented-out awaiting real Measurement ID. Added `audit.py` — re-runnable checklist audit. Remaining fails are deployment-dependent (GA4 ID, Search Console). |
 | 2.16.0 | 14 Sep 2026 | **Content loss found and restored.** The Team / Multiplier / Founder-role sections were silently destroyed by the v2.7.0 thesis rebuild (section replace between two markers). Restored consolidated as **#operation** — 6-person team breakdown, 4,500 intern network, and the no-management-layer argument. **Added `CONTENT-MANIFEST.txt` + `check-content.sh`** — run after every edit; verifies every section ID and a content marker still exist. Div-balance checks do not catch cleanly-removed sections. Mobile fixes: 404.html had zero media queries; .poster and .bio-wrap had no mobile rules. |
 | 2.15.0 | 14 Sep 2026 | New **press kit / bio** section on founder.html (`#press-kit`). Six copy-ready blocks with one-click clipboard: one-liner, short (~55w), medium (~130w), full (~270w), spoken stage introduction, and a structured key-facts block. Vanilla JS with execCommand fallback for non-HTTPS. `/bio` and `/press-kit` redirect here. **Maintenance note: these bios are the canonical source — update them here when any fact changes.** Decided against a downloadable founder deck: bios get pasted, decks go stale. |
@@ -338,4 +340,4 @@ cd .. && zip -r ludifu-site-v2.5.0.zip ludifu-site -x "*.DS_Store"
 
 ---
 
-*End of handover — LUDIFU Website v2.18.0*
+*End of handover — LUDIFU Website v2.20.0*
