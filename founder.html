@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     LUDIFU WEBSITE  ·  v2.22.0  ·  2026-09-12
+     LUDIFU WEBSITE  ·  v2.23.0  ·  2026-09-12
      File: founder.html
      Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
      Fonts: Cormorant Garamond (display) + Outfit (body)
@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="2.22.0">
+<meta name="version" content="2.23.0">
 <meta name="build-date" content="2026-09-12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Puneet Rawat — Founder, LUDIFU | Mumbai</title>
@@ -108,6 +108,25 @@ nav{position:sticky;top:0;z-index:300;background:rgba(250,248,244,0.96);backdrop
 .hm{font-size:.79rem;color:rgba(250,248,244,.45)}
 .hm strong{display:block;color:rgba(250,248,244,.85);font-weight:600;font-size:.86rem;margin-bottom:2px}
 
+
+
+/* TIMELINE TEASER */
+.tt-grid{display:grid;grid-template-columns:1fr 380px;gap:52px;align-items:center}
+.tt-prev{position:relative;background:var(--white);border:1px solid var(--border);
+  border-radius:12px;padding:22px 24px;max-height:290px;overflow:hidden}
+.tt-row{display:flex;align-items:center;gap:13px;padding:9px 0;border-bottom:1px solid var(--border)}
+.tt-row:last-of-type{border-bottom:none}
+.tt-y{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:700;color:var(--muted);min-width:42px}
+.tt-d{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.d-v{background:var(--forest)}.d-c{background:#7d7365}.d-p{background:var(--terra)}.d-m{background:var(--gold-mid)}
+.tt-t{font-size:.85rem;color:var(--ink2)}
+.tt-fade{position:absolute;left:0;right:0;bottom:0;height:64px;
+  background:linear-gradient(transparent,var(--white))}
+@media(max-width:980px){
+  #timeline-teaser{padding:44px 22px!important}
+  .tt-grid{grid-template-columns:1fr;gap:28px}
+  .tt-prev{max-height:250px}
+}
 
 /* SECTION RAIL */
 .railnav{position:fixed;left:26px;top:50%;transform:translateY(-50%);z-index:250;
@@ -439,12 +458,11 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
     <a href="founder.html" class="nav-logo">The <span>Founder</span></a>
   </div>
   <div class="nav-links">
-    <a href="#decision">The Decision</a>
-    <a href="#ventures">The Ventures</a>
     <a href="timeline.html">Timeline</a>
+    <a href="#ventures">The Ventures</a>
     <a href="#funding">The Funding</a>
     <a href="#clicarity">Where It Goes</a>
-    <a href="academy.html">LUCADEMY</a>
+    <a href="#investor-brief">Investors</a>
   </div>
   <button class="hamburger" id="ham-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
     <span id="hb1"></span><span id="hb2"></span><span id="hb3"></span>
@@ -470,6 +488,7 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
 
 <!-- SECTION RAIL -->
 <nav class="railnav" id="railnav" aria-label="Section navigation">
+  <a href="#timeline-teaser" data-s="timeline-teaser"><span class="rn-dot"></span><span class="rn-lbl">Timeline</span></a>
   <a href="#lineage"        data-s="lineage"><span class="rn-dot"></span><span class="rn-lbl">Lineage</span></a>
   <a href="#decision"       data-s="decision"><span class="rn-dot"></span><span class="rn-lbl">The Decision</span></a>
   <a href="#early"          data-s="early"><span class="rn-dot"></span><span class="rn-lbl">Education</span></a>
@@ -519,6 +538,31 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
     <div class="stat"><div class="stat-n">24,800+</div><div class="stat-l">Following his work</div></div>
   </div>
 </div>
+
+
+<!-- TIMELINE TEASER -->
+<section style="background:var(--warm);border-bottom:1px solid var(--border);padding:56px 72px" id="timeline-teaser">
+  <div style="max-width:1000px;margin:0 auto">
+    <div class="tt-grid">
+      <div>
+        <div class="eyebrow">Prefer It in Order?</div>
+        <h2 class="sh" style="font-size:clamp(1.6rem,2.6vw,2.2rem)">Four Decades on<br><em>One Line.</em></h2>
+        <p class="body" style="margin-top:14px;margin-bottom:22px">Everything below, arranged chronologically — the machine his grandfather bought in 1987 through to the first raise in 2026. Thirty-five entries, filterable by ventures, closures, press or milestones.</p>
+        <a href="timeline.html" style="display:inline-block;background:var(--forest);color:#fff;padding:14px 30px;border-radius:7px;font-size:.82rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none">Open the Timeline →</a>
+      </div>
+      <div class="tt-prev" aria-hidden="true">
+        <div class="tt-row"><span class="tt-y">1987</span><span class="tt-d d-m"></span><span class="tt-t">A press built from a scooter</span></div>
+        <div class="tt-row"><span class="tt-y">2007</span><span class="tt-d d-m"></span><span class="tt-t">Turns down 2% of PrintBell</span></div>
+        <div class="tt-row"><span class="tt-y">2008</span><span class="tt-d d-v"></span><span class="tt-t">Print World · Zodiac · Etam</span></div>
+        <div class="tt-row"><span class="tt-y">2013</span><span class="tt-d d-m"></span><span class="tt-t">Sponsors <em>COCK</em> at Prithvi</span></div>
+        <div class="tt-row"><span class="tt-y">2014</span><span class="tt-d d-c"></span><span class="tt-t">Three ventures close</span></div>
+        <div class="tt-row"><span class="tt-y">2020</span><span class="tt-d d-p"></span><span class="tt-t">Times of India, Page 2</span></div>
+        <div class="tt-row"><span class="tt-y">2025</span><span class="tt-d d-v"></span><span class="tt-t">Clicarity</span></div>
+        <div class="tt-fade"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- LINEAGE -->
 <section class="sec sec-white" id="lineage">
@@ -1360,7 +1404,6 @@ LinkedIn: linkedin.com/in/puneet-rawat</div>
     <div class="ft-cols">
       <div class="ft-col">
         <h5>The Founder</h5>
-        <a href="timeline.html">The Timeline</a>
         <a href="timeline.html">The Timeline</a>
   <a href="#lineage">Lineage</a>
         <a href="#decision">The Decision</a>
