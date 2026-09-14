@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     LUDIFU WEBSITE  ·  v2.20.0  ·  2026-09-12
+     LUDIFU WEBSITE  ·  v2.22.0  ·  2026-09-12
      File: 404.html
      Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
      Fonts: Cormorant Garamond (display) + Outfit (body)
@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="2.20.0">
+<meta name="version" content="2.22.0">
 <meta name="build-date" content="2026-09-12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page Not Found — LUDIFU</title>
@@ -57,6 +57,9 @@ a:focus-visible{outline:2px solid var(--sage);outline-offset:3px;}
   .btn{width:100%;text-align:center}
   .venture-links{gap:14px}
 }
+
+/* Anchor targets clear the sticky nav (68px) */
+section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
 </style>
 
 <!-- ══════════════════════════════════════════════════════════

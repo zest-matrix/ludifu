@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     LUDIFU WEBSITE  ·  v2.20.0  ·  2026-09-12
+     LUDIFU WEBSITE  ·  v2.22.0  ·  2026-09-12
      File: founder.html
      Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
      Fonts: Cormorant Garamond (display) + Outfit (body)
@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="2.20.0">
+<meta name="version" content="2.22.0">
 <meta name="build-date" content="2026-09-12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Puneet Rawat — Founder, LUDIFU | Mumbai</title>
@@ -107,6 +107,28 @@ nav{position:sticky;top:0;z-index:300;background:rgba(250,248,244,0.96);backdrop
   border-top:1px solid rgba(250,248,244,.12);flex-wrap:wrap}
 .hm{font-size:.79rem;color:rgba(250,248,244,.45)}
 .hm strong{display:block;color:rgba(250,248,244,.85);font-weight:600;font-size:.86rem;margin-bottom:2px}
+
+
+/* SECTION RAIL */
+.railnav{position:fixed;left:26px;top:50%;transform:translateY(-50%);z-index:250;
+  display:flex;flex-direction:column;gap:2px;padding:14px 10px;
+  background:rgba(250,248,244,.85);backdrop-filter:blur(10px);
+  border:1px solid var(--border);border-radius:14px;max-height:78vh;overflow-y:auto;
+  scrollbar-width:none}
+.railnav::-webkit-scrollbar{display:none}
+.railnav a{display:flex;align-items:center;gap:10px;text-decoration:none;
+  padding:5px 8px;border-radius:8px;transition:background .2s}
+.railnav a:hover{background:rgba(44,95,63,.07)}
+.rn-dot{width:7px;height:7px;border-radius:50%;background:var(--border);
+  flex-shrink:0;transition:background .25s,transform .25s}
+.rn-lbl{font-size:.72rem;font-weight:500;color:var(--muted);white-space:nowrap;
+  max-width:0;overflow:hidden;opacity:0;transition:max-width .3s ease,opacity .25s ease}
+.railnav:hover .rn-lbl{max-width:150px;opacity:1}
+.railnav a.on .rn-dot{background:var(--forest);transform:scale(1.5)}
+.railnav a.on .rn-lbl{color:var(--forest);font-weight:600}
+@media(max-width:1400px){.railnav{left:12px}}
+@media(max-width:1180px){.railnav{display:none}}
+@media(prefers-reduced-motion:reduce){.rn-lbl,.rn-dot{transition:none}}
 
 /* HERO PHOTO */
 .hero-photo img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;
@@ -383,6 +405,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-mid);outline-o
   footer{padding:44px 22px 24px}
   .ft-top{flex-direction:column}
 }
+
+/* Anchor targets clear the sticky nav (68px) */
+section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
 </style>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -416,7 +441,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-mid);outline-o
   <div class="nav-links">
     <a href="#decision">The Decision</a>
     <a href="#ventures">The Ventures</a>
-    <a href="#the-question">The Question</a>
+    <a href="timeline.html">Timeline</a>
     <a href="#funding">The Funding</a>
     <a href="#clicarity">Where It Goes</a>
     <a href="academy.html">LUCADEMY</a>
@@ -427,6 +452,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-mid);outline-o
 </nav>
 <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
   <a href="index.html">← Back to LUDIFU</a>
+  <a href="timeline.html">The Timeline</a>
   <a href="#lineage">Lineage</a>
   <a href="#decision">The Decision</a>
   <a href="#early">Education</a>
@@ -440,6 +466,26 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-mid);outline-o
   <a href="academy.html">LUCADEMY</a>
   <a href="careers.html">Careers</a>
 </div>
+
+
+<!-- SECTION RAIL -->
+<nav class="railnav" id="railnav" aria-label="Section navigation">
+  <a href="#lineage"        data-s="lineage"><span class="rn-dot"></span><span class="rn-lbl">Lineage</span></a>
+  <a href="#decision"       data-s="decision"><span class="rn-dot"></span><span class="rn-lbl">The Decision</span></a>
+  <a href="#early"          data-s="early"><span class="rn-dot"></span><span class="rn-lbl">Education</span></a>
+  <a href="#ventures"       data-s="ventures"><span class="rn-dot"></span><span class="rn-lbl">Every Venture</span></a>
+  <a href="#operation"      data-s="operation"><span class="rn-dot"></span><span class="rn-lbl">The Operation</span></a>
+  <a href="#stack"          data-s="stack"><span class="rn-dot"></span><span class="rn-lbl">The Stack</span></a>
+  <a href="#lessons"        data-s="lessons"><span class="rn-dot"></span><span class="rn-lbl">The Lessons</span></a>
+  <a href="#theplay"        data-s="theplay"><span class="rn-dot"></span><span class="rn-lbl">The Play</span></a>
+  <a href="#the-question"   data-s="the-question"><span class="rn-dot"></span><span class="rn-lbl">The Question</span></a>
+  <a href="#funding"        data-s="funding"><span class="rn-dot"></span><span class="rn-lbl">The Funding</span></a>
+  <a href="#thesis"         data-s="thesis"><span class="rn-dot"></span><span class="rn-lbl">The Pattern</span></a>
+  <a href="#clicarity"      data-s="clicarity"><span class="rn-dot"></span><span class="rn-lbl">Where It Goes</span></a>
+  <a href="#press"          data-s="press"><span class="rn-dot"></span><span class="rn-lbl">Press</span></a>
+  <a href="#investor-brief" data-s="investor-brief"><span class="rn-dot"></span><span class="rn-lbl">Investors</span></a>
+  <a href="#press-kit"      data-s="press-kit"><span class="rn-dot"></span><span class="rn-lbl">Copy-ready Bios</span></a>
+</nav>
 
 <div id="main-content">
 
@@ -1314,7 +1360,9 @@ LinkedIn: linkedin.com/in/puneet-rawat</div>
     <div class="ft-cols">
       <div class="ft-col">
         <h5>The Founder</h5>
-        <a href="#lineage">Lineage</a>
+        <a href="timeline.html">The Timeline</a>
+        <a href="timeline.html">The Timeline</a>
+  <a href="#lineage">Lineage</a>
         <a href="#decision">The Decision</a>
         <a href="#early">Education</a>
         <a href="#lessons">The Lessons</a>
@@ -1415,6 +1463,34 @@ function fallback(text, done){
   try { document.execCommand('copy'); done(); } catch(e) {}
   document.body.removeChild(ta);
 }
+</script>
+
+<script>
+/* section rail — scrollspy */
+(function(){
+  var rail=document.getElementById('railnav');
+  if(!rail) return;
+  var links=Array.prototype.slice.call(rail.querySelectorAll('a'));
+  var secs=links.map(function(a){return document.getElementById(a.dataset.s);}).filter(Boolean);
+  if(!secs.length) return;
+
+  function setActive(id){
+    links.forEach(function(a){ a.classList.toggle('on', a.dataset.s===id); });
+  }
+  if('IntersectionObserver' in window){
+    var seen={};
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ seen[en.target.id]=en.intersectionRatio; });
+      var best=null,bv=0;
+      Object.keys(seen).forEach(function(k){ if(seen[k]>bv){bv=seen[k];best=k;} });
+      if(best && bv>0) setActive(best);
+    },{rootMargin:'-88px 0px -55% 0px',threshold:[0,.1,.3,.6,1]});
+    secs.forEach(function(s){io.observe(s);});
+  }
+  links.forEach(function(a){
+    a.addEventListener('click',function(){ setActive(a.dataset.s); });
+  });
+})();
 </script>
 </body>
 </html>

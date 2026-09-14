@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     LUDIFU WEBSITE  ·  v2.20.0  ·  2026-09-12
+     LUDIFU WEBSITE  ·  v2.22.0  ·  2026-09-12
      File: academy.html
      Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
      Fonts: Cormorant Garamond (display) + Outfit (body)
@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="2.20.0">
+<meta name="version" content="2.22.0">
 <meta name="build-date" content="2026-09-12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LUCADEMY — Live Training for Teams | LUDIFU</title>
@@ -473,6 +473,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-mid);outline-o
   footer{padding:44px 22px 24px}
   .ft-top{flex-direction:column}
 }
+
+/* Anchor targets clear the sticky nav (68px) */
+section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"How did LUDIFU Academy run an EdTech company with only six people?","acceptedAnswer":{"@type":"Answer","text":"By automating the entire student journey. Lead capture, WhatsApp communication, registrations, payments, class notifications, assignment reminders, certificate generation, professor coordination and intern management were all handled by systems rather than staff. The core team of one founder, one freelance designer, ten professors and three rotating interns focused only on teaching and exceptions."}},
@@ -1220,6 +1223,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-mid);outline-o
         <h5>Company</h5>
         <a href="index.html">Home</a>
         <a href="founder.html">The Founder</a>
+        <a href="timeline.html">The Timeline</a>
         <a href="index.html#story">Our Story</a>
         <a href="https://wa.me/919867800451" target="_blank" rel="noopener noreferrer">Contact</a>
       </div>

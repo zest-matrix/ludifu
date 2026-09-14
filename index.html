@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     LUDIFU WEBSITE  ·  v2.20.0  ·  2026-09-12
+     LUDIFU WEBSITE  ·  v2.22.0  ·  2026-09-12
      File: index.html
      Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
      Fonts: Cormorant Garamond (display) + Outfit (body)
@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="2.20.0">
+<meta name="version" content="2.22.0">
 <meta name="build-date" content="2026-09-12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LUDIFU — Let Us Do It For U | Mumbai Ventures</title>
@@ -398,6 +398,9 @@ footer{
     padding: 0 !important;
   }
 @media(max-width:960px){
+  #record{padding:48px 22px!important}
+  #record > div{grid-template-columns:1fr!important;gap:26px!important}
+
   nav{padding:0 24px}
   .nav-links{display:none}
   .hero{grid-template-columns:1fr;padding:70px 24px 50px;gap:40px}
@@ -417,6 +420,9 @@ footer{
   @media(max-width:980px){
     div[style*="As featured"] {}
   }
+
+/* Anchor targets clear the sticky nav (68px) */
+section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
 </style>
 
   <!-- Open Graph -->
@@ -521,6 +527,7 @@ footer{
     <a href="#clicarity">Clicarity</a>
     <a href="photobooks.html">PhotoBooks</a>
     <a href="#story">Our Story</a>
+    <a href="timeline.html">Timeline</a>
     <a href="founder.html">Founder</a>
     <a href="careers.html">Careers</a>
   </div>
@@ -536,6 +543,7 @@ footer{
   <a href="https://www.clicarity.com" target="_blank" rel="noopener">Clicarity</a>
   <a href="photobooks.html">PhotoBooks</a>
   <a href="#story">Our Story</a>
+  <a href="timeline.html">The Timeline</a>
   <a href="founder.html">The Founder</a>
   <a href="careers.html">Careers</a>
   <a href="terms.html">Terms & Conditions</a>
@@ -595,7 +603,7 @@ footer{
     </div>
     <div class="story-text">
       <p>LUDIFU — <strong>Let Us Do It For U</strong> — started with a simple belief: that there are people and businesses who need things done well, and we could be the ones to do it.</p>
-      <p>Over the years, we built tools for business operations, courses for career growth, automation for communication, and products for preserving memories. Not everything we tried worked. But the things that did — we doubled down on them.</p>
+      <p>Over the years, we built tools for business operations, training for career growth, automation for communication, and products for preserving memories. Not everything we tried worked — and we closed those cleanly rather than letting them linger. The things that did work, we doubled down on.</p>
       <p>Today, LUDIFU is a <strong>family of five ventures</strong>: each independent, each focused, each built around solving a genuine problem. We're not a big company. We're a committed team that takes pride in every product we ship.</p>
     </div>
   </div>
@@ -622,11 +630,11 @@ footer{
       </div>
       <span class="bc-tag" style="background:#e8f2eb;color:#2c5f3f">Education</span>
       <div class="bc-name">LUCADEMY</div>
-      <div class="bc-tagline">Live certified training for real career outcomes.</div>
-      <div class="bc-desc">Instructor-led, Zoom-based courses in Data Analytics, Digital Marketing, Python, Power BI, SQL, Tableau and more. Each course includes bonus hours and a recognised certificate. Plus free 1-hour workshops — no commitment needed.</div>
+      <div class="bc-tagline">Three lakh enquiries. Six thousand students. Six people.</div>
+      <div class="bc-desc">Live instructor-led training that ran from 2020 to 2023 across ten subjects, built and operated by a core team of six. Featured on Page 2 of the Times of India. Open batches have closed; corporate and group training continues on request.</div>
       <div class="bc-footer">
-        <span class="bc-link">Explore Courses →</span>
-        <span style="font-size:0.78rem;color:var(--muted)">12+ Courses · Live · Certified</span>
+        <span class="bc-link">Read the Case Study →</span>
+        <span style="font-size:0.78rem;color:var(--muted)">2020–2023 · 6,000+ students</span>
       </div>
     </a>
 
@@ -638,7 +646,7 @@ footer{
       </div>
       <span class="bc-tag" style="background:#e3f2fd;color:#1565c0">Operations · SaaS</span>
       <div class="bc-name">Clicarity</div>
-      <div class="bc-tagline">Solve JSR & TAT — the two biggest ops problems in every SME.</div>
+      <div class="bc-tagline">A light execution system that sits under your ERP.</div>
       <div class="bc-desc">Real-time work tracking for manufacturing, printing, packaging, steel and engineering businesses. Two screens, unlimited licences, no training required. Featured in PrintWeek and Print Bulletin.</div>
       <div class="bc-footer">
         <span class="bc-link">Visit Clicarity →</span>
@@ -703,18 +711,19 @@ footer{
 <section class="academy-bg" id="academy">
 <div class="academy-inner">
   <div>
-    <div class="eyebrow">LUCADEMY</div>
-    <h2 class="section-h" style="font-size:clamp(1.8rem,2.8vw,2.6rem)">Learn Live.<br>Get Certified.<br>Grow Your Career.</h2>
-    <p style="color:var(--muted);font-size:0.93rem;line-height:1.75;margin-top:14px;margin-bottom:28px">Our most active venture. Real instructors, live Zoom sessions, in-demand skills — with free 1-hour workshops anyone can join today.</p>
-    <a href="academy.html" class="btn-primary">Go to LUCADEMY →</a>
+    <div class="eyebrow">LUCADEMY · 2020–2023</div>
+    <h2 class="section-h" style="font-size:clamp(1.8rem,2.8vw,2.6rem)">Three Lakh Enquiries.<br>Six Thousand Students.<br><em>Six People.</em></h2>
+    <p style="color:var(--muted);font-size:0.93rem;line-height:1.75;margin-top:14px;margin-bottom:18px">Launched mid-lockdown in May 2020 and run for three and a half years across ten subjects — by a core team of six, because almost everything was automated. Featured on Page 2 of the Times of India.</p>
+    <p style="color:var(--muted);font-size:0.88rem;line-height:1.75;margin-bottom:28px">Open batches are closed. Corporate and group training is still arranged on request with the same instructors, and every past student's recordings remain online.</p>
+    <a href="academy.html" class="btn-primary">Read the Full Case Study →</a>
   </div>
   <div class="academy-courses">
-    <a class="ac-row" href="academy.html"><span class="ac-icon">📊</span><span class="ac-name">Data Science with Power BI</span><span class="ac-hrs">30 hrs + 60 bonus</span></a>
-    <a class="ac-row" href="academy.html"><span class="ac-icon">🐍</span><span class="ac-name">Python for Data Analytics</span><span class="ac-hrs">30 hrs + 54 bonus</span></a>
-    <a class="ac-row" href="academy.html"><span class="ac-icon">📈</span><span class="ac-name">Performance Marketing</span><span class="ac-hrs">30 hrs + 60 bonus</span></a>
-    <a class="ac-row" href="academy.html"><span class="ac-icon">🎯</span><span class="ac-name">Google Ads Specialist</span><span class="ac-hrs">Certified</span></a>
-    <a class="ac-row" href="academy.html"><span class="ac-icon">🗂️</span><span class="ac-name">Tableau & SQL</span><span class="ac-hrs">Combined Track</span></a>
-    <a class="ac-row" href="academy.html" style="background:var(--forest-lt);border-color:rgba(44,95,63,0.2)"><span class="ac-icon">✦</span><span class="ac-name" style="color:var(--forest)">View all 12+ courses</span><span class="ac-hrs" style="color:var(--forest)">+ Free Workshops</span></a>
+    <a class="ac-row" href="academy.html"><span class="ac-icon">📊</span><span class="ac-name">Data Science with Power BI</span><span class="ac-hrs">Taught 2020–23</span></a>
+    <a class="ac-row" href="academy.html"><span class="ac-icon">🐍</span><span class="ac-name">Python for Data Analytics</span><span class="ac-hrs">Taught 2020–23</span></a>
+    <a class="ac-row" href="academy.html"><span class="ac-icon">📈</span><span class="ac-name">Performance Marketing</span><span class="ac-hrs">Taught 2020–23</span></a>
+    <a class="ac-row" href="academy.html"><span class="ac-icon">🎯</span><span class="ac-name">Google Ads Specialist</span><span class="ac-hrs">Taught 2020–23</span></a>
+    <a class="ac-row" href="academy.html"><span class="ac-icon">🗂️</span><span class="ac-name">Tableau &amp; SQL</span><span class="ac-hrs">Taught 2020–23</span></a>
+    <a class="ac-row" href="academy.html" style="background:var(--forest-lt);border-color:rgba(44,95,63,0.2)"><span class="ac-icon">✦</span><span class="ac-name" style="color:var(--forest)">All ten subjects, and the funnel behind them</span><span class="ac-hrs" style="color:var(--forest)">Case study →</span></a>
   </div>
 </div>
 </section>
@@ -775,13 +784,30 @@ footer{
 </section>
 
 
+
+<!-- THE FULL RECORD -->
+<section style="background:var(--ink);padding:64px 72px" id="record">
+  <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:44px;align-items:center">
+    <div>
+      <div style="font-size:.68rem;font-weight:700;letter-spacing:2.6px;text-transform:uppercase;color:#c9a84c;margin-bottom:14px">Since 2008</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:400;color:#faf8f4;line-height:1.18;margin-bottom:16px">These Five Are What<br>Remain of <em style="font-style:italic;color:#c9a84c">Fifteen.</em></h2>
+      <p style="color:rgba(250,248,244,.6);font-size:.94rem;line-height:1.85;max-width:560px;margin-bottom:10px">Flowers, home bakers, pet supplies, coupons, an SEO agency, a restaurant, a contraceptive delivery business. Fifteen ventures built since 2008, every one funded from cash flow — and ten of them deliberately closed.</p>
+      <p style="color:rgba(250,248,244,.6);font-size:.94rem;line-height:1.85;max-width:560px">None of them closed because the money ran out. Each one stopped for a reason worth reading.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:11px;min-width:210px">
+      <a href="timeline.html" style="background:#c9a84c;color:#241c12;padding:15px 26px;border-radius:7px;font-size:.82rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;text-align:center">The Timeline →</a>
+      <a href="founder.html" style="border:1.5px solid rgba(250,248,244,.28);color:rgba(250,248,244,.85);padding:15px 26px;border-radius:7px;font-size:.82rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;text-decoration:none;text-align:center">Meet the Founder →</a>
+    </div>
+  </div>
+</section>
+
 <!-- CLICARITY SECTION -->
 <section style="background:var(--linen);border-top:1px solid var(--border)" id="clicarity">
 <div style="max-width:1300px;margin:0 auto;padding:90px 72px">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center">
     <div>
       <div class="eyebrow">Clicarity</div>
-      <h2 class="section-h" style="font-size:clamp(1.8rem,2.8vw,2.6rem)">Solve JSR & TAT —<br>the Two Biggest Ops<br><em>Problems in Every SME.</em></h2>
+      <h2 class="section-h" style="font-size:clamp(1.8rem,2.8vw,2.6rem)">What If Every Person<br>Could <em>See Their</em><br><em>Own Work?</em></h2>
       <p style="color:var(--muted);font-size:0.93rem;line-height:1.78;margin-top:14px;margin-bottom:28px">
         Clicarity is a light manufacturing execution system — the tracking layer that sits underneath your ERP, CRM or Google Sheets. Every order, every stage, recorded as it happens. Two screens, unlimited licences, and nobody needs training twice.
       </p>
@@ -931,7 +957,7 @@ footer{
     <div class="value-card">
       <div class="value-num">02</div>
       <div class="value-title">We Keep It Simple</div>
-      <div class="value-desc">Whether it's a two-screen job tracker or a 1-hour free workshop — we believe simplicity is a sign of clarity, not laziness.</div>
+      <div class="value-desc">Whether it's a two-screen job tracker or a live training session, we believe simplicity is a sign of clarity, not laziness.</div>
     </div>
     <div class="value-card">
       <div class="value-num">03</div>
@@ -975,14 +1001,16 @@ footer{
       </div>
       <div class="footer-col">
         <h5>Academy</h5>
-        <a href="academy.html">All Courses</a>
-        <a href="academy.html#workshops">Free Workshops</a>
+        <a href="academy.html">The Case Study</a>
+        <a href="academy.html#training">Training on Request</a>
         <a href="https://ludifurecordings.thinkific.com/collections" target="_blank" rel="noopener">Recordings</a>
       </div>
       <div class="footer-col">
         <h5>Company</h5>
         <a href="academy.html">LUCADEMY — Our Story</a>
         <a href="#story">Our Story</a>
+        <a href="timeline.html">The Timeline</a>
+  <a href="timeline.html">The Timeline</a>
         <a href="founder.html">The Founder</a>
         <a href="careers.html">Careers</a>
         <a href="https://wa.me/919867800451" target="_blank" rel="noopener noreferrer">Contact Us</a>

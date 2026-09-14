@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     LUDIFU WEBSITE  ·  v2.20.0  ·  2026-09-12
+     LUDIFU WEBSITE  ·  v2.22.0  ·  2026-09-12
      File: photobooks.html
      Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
      Fonts: Cormorant Garamond (display) + Outfit (body)
@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="2.20.0">
+<meta name="version" content="2.22.0">
 <meta name="build-date" content="2026-09-12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LUDIFU PhotoBooks — Bespoke Coffee Table Books Mumbai</title>
@@ -650,6 +650,9 @@ footer { background: var(--ink); padding: 52px 80px 28px; }
   .s10, .sp10 { width: 75px !important; height: 75px !important; }
   .s12, .sp12 { width: 90px !important; height: 90px !important; }
 }
+
+/* Anchor targets clear the sticky nav (68px) */
+section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
 </style>
 
   <!-- Open Graph -->
@@ -765,6 +768,7 @@ footer { background: var(--ink); padding: 52px 80px 28px; }
 </nav><div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
   <a href="index.html">← Back to LUDIFU</a>
         <a href="founder.html">The Founder</a>
+        <a href="timeline.html">The Timeline</a>
         <a href="careers.html">Careers</a>
   <a href="#about">What Is a Coffee Table Book</a>
   <a href="#occasions">Who It's For</a>

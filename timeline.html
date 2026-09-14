@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     LUDIFU WEBSITE  ·  v2.22.0  ·  2026-09-14
+     File: timeline.html
+     Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
+     Fonts: Cormorant Garamond (display) + Outfit (body)
+     Handover doc: HANDOVER.md in repo root
+     ============================================================ -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="version" content="2.22.0">
+<meta name="build-date" content="2026-09-14">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Timeline — Puneet Rawat, LUDIFU</title>
+<meta name="description" content="1987 to today. Every LUDIFU venture, every publication, every turning point — in order, with dates and outcomes."/>
+<link rel="canonical" href="https://www.ludifu.com/timeline.html"/>
+<meta name="robots" content="index, follow"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap"/>
+
+<meta property="og:type"         content="website"/>
+<meta property="og:url"          content="https://www.ludifu.com/timeline.html"/>
+<meta property="og:title"        content="The Timeline — Puneet Rawat, LUDIFU"/>
+<meta property="og:description"  content="1987 to today. Fifteen ventures, six publications, one continuous line."/>
+<meta property="og:image"        content="https://www.ludifu.com/og-image.jpg"/>
+<meta property="og:image:width"  content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale"       content="en_IN"/>
+<meta property="og:site_name"    content="LUDIFU"/>
+<meta name="twitter:card"        content="summary_large_image"/>
+<meta name="twitter:title"       content="The Timeline — Puneet Rawat, LUDIFU"/>
+<meta name="twitter:description" content="1987 to today. Fifteen ventures, six publications, one continuous line."/>
+<meta name="twitter:image"       content="https://www.ludifu.com/og-image.jpg"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/></noscript>
+
+<!-- ══════════════════════════════════════════════════════════
+     GOOGLE ANALYTICS 4 — NOT YET ACTIVE
+     Replace G-XXXXXXXXXX with your real Measurement ID from
+     analytics.google.com, then uncomment the block below.
+     ══════════════════════════════════════════════════════════
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+
+<style>
+:root{
+  --cream:#faf8f4;--white:#fff;--ink:#1e1e1e;--ink2:#3a3a3a;
+  --forest:#2c5f3f;--forest2:#3d7a53;--forest-lt:#e8f2eb;
+  --gold:#9a7c3a;--gold-lt:#f0e4c0;--gold-mid:#c9a84c;
+  --terra:#a84f2e;--terra-lt:#f5e8e2;
+  --stone:#7d7365;--stone-lt:#efece6;
+  --warm:#f2ece0;--muted:#5c5048;--border:#e2ddd4;
+  --deep:#241c12;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink2);font-family:'Outfit',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;line-height:1.12;color:var(--ink)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:400;background:rgba(250,248,244,.96);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);padding:0 72px;height:68px;
+  display:flex;align-items:center;justify-content:space-between}
+.nav-left{display:flex;align-items:center;gap:18px;flex-shrink:0}
+.nav-back{color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:500;transition:color .2s}
+.nav-back:hover{color:var(--forest)}
+.nav-divider{width:1px;height:18px;background:var(--border)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;letter-spacing:1px;
+  color:var(--ink);text-decoration:none;white-space:nowrap}
+.nav-logo span{color:var(--forest)}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:500;white-space:nowrap;transition:color .2s}
+.nav-links a:hover{color:var(--forest)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;
+  padding:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+.hamburger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .25s}
+.mobile-menu{display:none}
+@media(max-width:1100px){
+  .nav-links{display:none!important}.hamburger{display:flex!important}
+  .nav-divider{display:none}.nav-left{gap:12px}.nav-logo{font-size:1.05rem}
+  .mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;
+    background:rgba(250,248,244,.98);backdrop-filter:blur(12px);z-index:499;
+    flex-direction:column;padding:24px 26px;overflow-y:auto}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{color:var(--ink);text-decoration:none;font-size:1.05rem;font-weight:500;
+    padding:14px 0;border-bottom:1px solid var(--border)}
+}
+
+/* READING PROGRESS */
+#progress{position:fixed;top:68px;left:0;height:2px;background:var(--gold-mid);z-index:399;width:0;transition:width .1s linear}
+
+/* HERO */
+.hero{background:var(--deep);padding:74px 72px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 60% at 75% 30%,rgba(201,168,76,.09) 0%,transparent 70%)}
+.hero-in{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;color:var(--gold-mid);margin-bottom:22px}
+.hero-tag::before{content:'';width:30px;height:1.5px;background:var(--gold-mid)}
+.hero h1{font-size:clamp(2.4rem,5vw,4.2rem);font-weight:400;color:var(--cream);letter-spacing:-1px;margin-bottom:18px}
+.hero h1 em{font-style:italic;color:var(--gold-mid)}
+.hero p{color:rgba(250,248,244,.62);font-size:1.02rem;line-height:1.85;max-width:600px}
+
+/* FILTERS */
+.filters{position:sticky;top:68px;z-index:300;background:rgba(250,248,244,.97);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 72px}
+.filters-in{max-width:1100px;margin:0 auto;display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.f-label{font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);margin-right:6px}
+.chip{border:1.5px solid var(--border);background:var(--white);color:var(--muted);
+  border-radius:999px;padding:8px 18px;font-family:'Outfit',sans-serif;font-size:.8rem;
+  font-weight:500;cursor:pointer;transition:all .2s;white-space:nowrap}
+.chip:hover{border-color:var(--forest);color:var(--forest)}
+.chip.on{background:var(--forest);border-color:var(--forest);color:#fff}
+.chip .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:middle}
+.d-venture{background:var(--forest)}.d-press{background:var(--terra)}
+.d-milestone{background:var(--gold-mid)}.d-closed{background:var(--stone)}
+
+/* TIMELINE */
+.tl-wrap{max-width:1100px;margin:0 auto;padding:60px 72px 90px;position:relative}
+.rail{position:absolute;left:50%;top:60px;bottom:90px;width:2px;background:var(--border);transform:translateX(-50%)}
+.rail-fill{position:absolute;left:0;top:0;width:100%;background:linear-gradient(var(--gold-mid),var(--forest));height:0;transition:height .15s linear}
+
+.yr{position:relative;text-align:center;margin:44px 0 26px;z-index:2}
+.yr span{background:var(--cream);padding:6px 20px;font-family:'Cormorant Garamond',serif;
+  font-size:1.55rem;font-weight:700;color:var(--ink);letter-spacing:1px;
+  border:1px solid var(--border);border-radius:999px}
+
+.ev{position:relative;width:calc(50% - 44px);margin-bottom:18px;
+  opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.ev.in{opacity:1;transform:none}
+.ev.left{margin-right:auto;text-align:right}
+.ev.right{margin-left:auto}
+.ev::after{content:'';position:absolute;top:26px;width:13px;height:13px;border-radius:50%;
+  border:3px solid var(--cream);z-index:3}
+.ev.left::after{right:-50px}
+.ev.right::after{left:-50px}
+.ev.venture::after{background:var(--forest)}
+.ev.press::after{background:var(--terra)}
+.ev.milestone::after{background:var(--gold-mid)}
+.ev.closed::after{background:var(--stone)}
+
+.card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:22px 24px;
+  transition:box-shadow .25s,transform .25s,border-color .25s}
+.card:hover{box-shadow:0 10px 30px rgba(30,30,30,.09);transform:translateY(-2px)}
+.ev.venture .card{border-left:3px solid var(--forest)}
+.ev.press   .card{border-left:3px solid var(--terra);background:var(--terra-lt)}
+.ev.milestone .card{border-left:3px solid var(--gold-mid);background:var(--gold-lt)}
+.ev.closed  .card{border-left:3px solid var(--stone);background:var(--stone-lt)}
+.ev.left .card{border-left:none}
+.ev.left.venture .card{border-right:3px solid var(--forest)}
+.ev.left.press .card{border-right:3px solid var(--terra)}
+.ev.left.milestone .card{border-right:3px solid var(--gold-mid)}
+.ev.left.closed .card{border-right:3px solid var(--stone)}
+
+.c-when{font-size:.7rem;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:7px}
+.ev.venture .c-when{color:var(--forest)}
+.ev.press .c-when{color:var(--terra)}
+.ev.milestone .c-when{color:var(--gold)}
+.ev.closed .c-when{color:var(--stone)}
+.c-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.25}
+.c-body{font-size:.86rem;color:var(--muted);line-height:1.75}
+.c-body a{color:var(--forest);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(44,95,63,.3)}
+.c-tag{display:inline-block;font-size:.64rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+  padding:3px 10px;border-radius:999px;margin-top:10px;background:rgba(0,0,0,.05);color:var(--muted)}
+
+.ev.hide{display:none}
+
+/* CLOSING */
+.close-sec{background:var(--forest);padding:80px 72px;text-align:center}
+.close-sec h2{font-size:clamp(1.9rem,3.4vw,2.8rem);color:#fff;font-weight:400;margin-bottom:14px}
+.close-sec h2 em{font-style:italic;color:var(--gold-lt)}
+.close-sec p{color:rgba(255,255,255,.62);font-size:.96rem;line-height:1.85;max-width:520px;margin:0 auto 32px}
+.btn-w{background:#fff;color:var(--forest);padding:15px 32px;border-radius:6px;font-size:.84rem;
+  font-weight:700;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;display:inline-block}
+.btn-g{border:1.5px solid rgba(255,255,255,.35);color:rgba(255,255,255,.85);padding:15px 28px;
+  border-radius:6px;font-size:.84rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;
+  text-decoration:none;display:inline-block;margin-left:10px}
+
+/* FOOTER */
+footer{background:var(--ink);padding:52px 72px 28px}
+.ft-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:38px;margin-bottom:38px}
+.ft-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:1px}
+.ft-name span{color:var(--gold-mid)}
+.ft-tag{font-size:.81rem;color:rgba(255,255,255,.38);margin-top:8px;max-width:210px;line-height:1.65}
+.ft-cols{display:flex;gap:50px;flex-wrap:wrap}
+.ft-col h5{font-size:.66rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:15px}
+.ft-col a{display:block;color:rgba(255,255,255,.48);text-decoration:none;font-size:.84rem;margin-bottom:10px;transition:color .2s}
+.ft-col a:hover{color:#fff}
+.ft-bot{border-top:1px solid rgba(255,255,255,.07);padding-top:22px;display:flex;
+  justify-content:space-between;font-size:.75rem;color:rgba(255,255,255,.3);flex-wrap:wrap;gap:10px}
+.ft-bot a{color:rgba(255,255,255,.3);text-decoration:none;margin-left:16px}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold-mid);outline-offset:3px}
+#cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#2a1f14;color:#f5f0e8;
+  padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  flex-wrap:wrap;font-family:inherit;font-size:.82rem;box-shadow:0 -2px 16px rgba(0,0,0,.2);transition:transform .3s}
+#cookie-bar.hidden{transform:translateY(110%)}
+#cookie-bar p{margin:0;line-height:1.6;flex:1;min-width:220px}
+#cookie-bar a{color:#c9a84c;text-decoration:underline}
+#cookie-bar button{background:#c9a84c;color:#2a1f14;border:none;cursor:pointer;padding:9px 20px;
+  border-radius:3px;font-size:.78rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;
+  white-space:nowrap;font-family:inherit}
+#wa-float:hover{transform:scale(1.08)}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:0 22px}
+  .hero{padding:52px 22px 44px}
+  .filters{padding:14px 22px}
+  .f-label{width:100%;margin-bottom:4px}
+  .tl-wrap{padding:40px 22px 70px}
+  .rail{left:9px;transform:none}
+  .ev{width:100%!important;margin-left:38px!important;margin-right:0!important;text-align:left!important}
+  .ev::after{left:-36px!important;right:auto!important;top:24px}
+  .ev.left .card{border-right:none}
+  .ev.left.venture .card,.ev.right.venture .card{border-left:3px solid var(--forest)}
+  .ev.left.press .card,.ev.right.press .card{border-left:3px solid var(--terra)}
+  .ev.left.milestone .card,.ev.right.milestone .card{border-left:3px solid var(--gold-mid)}
+  .ev.left.closed .card,.ev.right.closed .card{border-left:3px solid var(--stone)}
+  .yr{text-align:left;margin-left:0}
+  .yr span{font-size:1.3rem;padding:5px 16px}
+  .close-sec{padding:56px 22px}
+  .btn-g{margin-left:0;margin-top:10px}
+  footer{padding:44px 22px 24px}
+  .ft-top{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+  .ev{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* Anchor targets clear the sticky nav (68px) */
+section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
+</style>
+</head>
+<body>
+
+<a href="#main-content" style="position:absolute;top:-100px;left:16px;z-index:10000;background:#2a1f14;
+  color:#f5f0e8;padding:10px 18px;border-radius:3px;font-size:.82rem;font-weight:600;
+  text-decoration:none;transition:top .2s" onfocus="this.style.top='16px'" onblur="this.style.top='-100px'">Skip to main content</a>
+
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="nav-back">← LUDIFU</a>
+    <span class="nav-divider"></span>
+    <a href="timeline.html" class="nav-logo">The <span>Timeline</span></a>
+  </div>
+  <div class="nav-links">
+    <a href="founder.html">The Founder</a>
+    <a href="founder.html#ventures">All Ventures</a>
+    <a href="founder.html#press">Press</a>
+    <a href="academy.html">LUCADEMY</a>
+    <a href="founder.html#investor-brief">Investors</a>
+  </div>
+  <button class="hamburger" id="ham-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span id="hb1"></span><span id="hb2"></span><span id="hb3"></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html">← Back to LUDIFU</a>
+  <a href="founder.html">The Founder</a>
+  <a href="founder.html#ventures">All Ventures</a>
+  <a href="founder.html#press">Press</a>
+  <a href="founder.html#investor-brief">Investor brief</a>
+  <a href="academy.html">LUCADEMY</a>
+  <a href="careers.html">Careers</a>
+</div>
+
+<div id="progress"></div>
+
+<div id="main-content">
+
+<section class="hero">
+  <div class="hero-in">
+    <div class="hero-tag">1987 — Today</div>
+    <h1>One Line,<br><em>Four Decades.</em></h1>
+    <p>Everything in order — the machine his grandfather bought, fifteen ventures, six publications, twelve closures and the businesses still running. Filter it, or read it straight through.</p>
+  </div>
+</section>
+
+<div class="filters">
+  <div class="filters-in">
+    <span class="f-label">Show</span>
+    <button class="chip on" data-f="all" onclick="filt(this,'all')">Everything</button>
+    <button class="chip" data-f="venture" onclick="filt(this,'venture')"><span class="dot d-venture"></span>Ventures started</button>
+    <button class="chip" data-f="closed" onclick="filt(this,'closed')"><span class="dot d-closed"></span>Closures</button>
+    <button class="chip" data-f="press" onclick="filt(this,'press')"><span class="dot d-press"></span>Press</button>
+    <button class="chip" data-f="milestone" onclick="filt(this,'milestone')"><span class="dot d-milestone"></span>Milestones</button>
+  </div>
+</div>
+
+<div class="tl-wrap">
+  <div class="rail"><div class="rail-fill" id="railfill"></div></div>
+
+  <div class="yr"><span>1987</span></div>
+  <div class="ev right milestone"><div class="card">
+    <div class="c-when">The beginning</div>
+    <div class="c-title">Paper Print Services founded</div>
+    <div class="c-body">His father starts a printing press, built from delivering xerox paper on a scooter. It goes on to print for HUL, Cadbury, Raymond, Zodiac, Siyaram, Etihad and Jet Airways.</div>
+  </div></div>
+
+  <div class="yr"><span>2001 – 2005</span></div>
+  <div class="ev left milestone"><div class="card">
+    <div class="c-when">Education</div>
+    <div class="c-title">Pennsylvania State University</div>
+    <div class="c-body">B.S. in Finance and Economics. Internships at ICICI Prudential AMC in 2002 and Merrill Lynch, Chicago in 2005.</div>
+  </div></div>
+
+  <div class="yr"><span>2005</span></div>
+  <div class="ev right milestone"><div class="card">
+    <div class="c-when">June</div>
+    <div class="c-title">Returns to India, joins the family business</div>
+    <div class="c-body">Comes home and joins Paper Print Services as a management trainee — a business he says he never wanted to be part of. Becomes a director in 2007.</div>
+  </div></div>
+
+  <div class="yr"><span>2007</span></div>
+  <div class="ev left milestone"><div class="card">
+    <div class="c-when">The decision</div>
+    <div class="c-title">Turns down 2% of PrintBell</div>
+    <div class="c-body">The CEO of PrintBell offers him a 2% stake. He declines, certain he can do better himself. PrintBell is <strong>VistaPrint India</strong> today. <a href="founder.html#decision">The full story →</a></div>
+    <div class="c-tag">The origin of everything after</div>
+  </div></div>
+  <div class="ev right venture"><div class="card">
+    <div class="c-when">2007 – 2012</div>
+    <div class="c-title">Unified Prints</div>
+    <div class="c-body">The intended online arm of the printing operation. Five years of development that never produced a live product — the developer could not hold a team together, and it turned out to be his side project.</div>
+  </div></div>
+
+  <div class="yr"><span>2008</span></div>
+  <div class="ev left venture"><div class="card">
+    <div class="c-when">2008 – present</div>
+    <div class="c-title">Print World</div>
+    <div class="c-body">Packaging and visual merchandising. Becomes <strong>one of only two approved vendors to Zodiac for roughly eight years</strong>, sole visual merchandising print vendor to Etam, and handles HUL's first Dove campaign in Mumbai. This is the business that funds everything else.</div>
+    <div class="c-tag">The one that worked</div>
+  </div></div>
+  <div class="ev right venture"><div class="card">
+    <div class="c-when">2008 – 2015</div>
+    <div class="c-title">CondomPoint</div>
+    <div class="c-body">Discreet home delivery of contraceptives. Top-3 Google rankings for four years, and a pivot to B2B supply for eight e-commerce platforms including HomeShop18, Naaptol, IndiaPlaza and Deals&amp;You.</div>
+  </div></div>
+  <div class="ev left venture"><div class="card">
+    <div class="c-when">2008 – 2015</div>
+    <div class="c-title">22SEO</div>
+    <div class="c-body">Search, social and SEM services for internet startups, with a team of twelve specialists.</div>
+  </div></div>
+
+  <div class="yr"><span>2010</span></div>
+  <div class="ev right venture"><div class="card">
+    <div class="c-when">2010 – 2012</div>
+    <div class="c-title">Unified Florists</div>
+    <div class="c-body">Global flower delivery across a network of florists in seven countries. One of the earliest Facebook shopping applications in India to complete payment inside Facebook rather than redirecting out.</div>
+  </div></div>
+
+  <div class="yr"><span>2011</span></div>
+  <div class="ev left venture"><div class="card">
+    <div class="c-when">2011 – 2014</div>
+    <div class="c-title">Unified Stores</div>
+    <div class="c-body">A marketplace exclusively for home bakers, with delivery handled in-house to protect quality. Associate sponsor of Ithaca at St. Xavier's, November 2011.</div>
+  </div></div>
+  <div class="ev right venture"><div class="card">
+    <div class="c-when">2011 – 2014</div>
+    <div class="c-title">My Pet Centre</div>
+    <div class="c-body">Online pet store, inspired by the family beagle, Mario. Exhibited at the Dog Fair at Colaba Pier.</div>
+  </div></div>
+
+  <div class="yr"><span>2012</span></div>
+  <div class="ev left venture"><div class="card">
+    <div class="c-when">2012 – 2014</div>
+    <div class="c-title">CouponZatak</div>
+    <div class="c-body">Coupon aggregator monetised through affiliate networks. Grew from ~100 to 20,000 monthly visitors in seven months.</div>
+  </div></div>
+
+  <div class="yr"><span>2013</span></div>
+  <div class="ev right milestone"><div class="card">
+    <div class="c-when">30 July – 1 August</div>
+    <div class="c-title">Sponsors <em>COCK</em> at Prithvi Theatre</div>
+    <div class="c-body">CondomPoint is lead sponsor of Mike Bartlett's Olivier Award-winning play, directed by Manish Gandhi. The poster credit reads <strong>"Protected by CondomPoint.com."</strong> The cast — Jim Sarbh, Sayani Gupta, Nakuul Mehta — were not household names then. <a href="founder.html#theplay">More →</a></div>
+  </div></div>
+
+  <div class="yr"><span>2014</span></div>
+  <div class="ev left closed"><div class="card">
+    <div class="c-when">Closures</div>
+    <div class="c-title">Unified Stores · My Pet Centre · CouponZatak</div>
+    <div class="c-body">Three closed in one year, each for a stated reason. Amazon entered pet retail and discounted heavily. Google's Panda update wiped CouponZatak's rankings. Confectionery, it turned out, runs on word of mouth rather than websites.</div>
+  </div></div>
+
+  <div class="yr"><span>2015</span></div>
+  <div class="ev right venture"><div class="card">
+    <div class="c-when">2015</div>
+    <div class="c-title">Unified Papers</div>
+    <div class="c-body">A paper vendor aggregator for the printing industry. Every vendor signed up; the customers never followed.</div>
+  </div></div>
+  <div class="ev left closed"><div class="card">
+    <div class="c-when">Closures</div>
+    <div class="c-title">CondomPoint · 22SEO</div>
+    <div class="c-body">CondomPoint closes on demand, not margin — in households where families live together, a discreetly packed box is not discreet. 22SEO closes while still working, because outsourcing made more structural sense than a twelve-person team.</div>
+  </div></div>
+
+  <div class="yr"><span>2016</span></div>
+  <div class="ev right milestone"><div class="card">
+    <div class="c-when">Joins</div>
+    <div class="c-title">ASCENT Foundation</div>
+    <div class="c-body">Becomes a member of Harsh Mariwala's peer-learning platform for growth-stage entrepreneurs. Goes on to facilitate his Trust Group for six of the next ten years.</div>
+  </div></div>
+  <div class="ev left venture"><div class="card">
+    <div class="c-when">23 December</div>
+    <div class="c-title">LUDIFU PhotoBooks launches</div>
+    <div class="c-body">An app: 30–100 phone photos, one per perforated page, ₹199, zero customisation by design. Seeded by GrooveBook on Shark Tank, angel funded by a family member. First real believer: <strong>Prithvi Haldea</strong> of PRIME Database.</div>
+  </div></div>
+
+  <div class="yr"><span>2017</span></div>
+  <div class="ev right press"><div class="card">
+    <div class="c-when">February</div>
+    <div class="c-title">Four publications in eight weeks</div>
+    <div class="c-body">Hindustan Times (HT DO, Page 11, 25 Feb) · BW Disrupt (15 Feb) · LBB · Mid-day, rated best deal of the Holi weekend.</div>
+  </div></div>
+  <div class="ev left milestone"><div class="card">
+    <div class="c-when">March</div>
+    <div class="c-title">"Successful Failures"</div>
+    <div class="c-body">Presents his own record of closed ventures under that title, as a guest lecturer. The intern network stands at 196 students and is growing by roughly seven a day.</div>
+  </div></div>
+
+  <div class="yr"><span>2018</span></div>
+  <div class="ev right venture"><div class="card">
+    <div class="c-when">2018 – present</div>
+    <div class="c-title">LUDIFU Coffee Table Books</div>
+    <div class="c-body">A premium category opened by one introduction — Anmol Babani, a friend from Penn State, connects LUDIFU to photographer Shruti Tejwani, and with it her client base of new mothers.</div>
+  </div></div>
+  <div class="ev left venture"><div class="card">
+    <div class="c-when">September</div>
+    <div class="c-title">The Leaf by Srinathji opens</div>
+    <div class="c-body">A 150-seater pure-vegetarian restaurant in Malad West. 450-item menu, 250+ inventory lines, a team of 65 — of whom 45 belong to the franchiser's rotating training pool.</div>
+  </div></div>
+  <div class="ev right milestone"><div class="card">
+    <div class="c-when">The turnaround</div>
+    <div class="c-title">Lunch with Harsh Mariwala</div>
+    <div class="c-body">Won by referring ~75 entrepreneurs to ASCENT, the most of anyone. The advice: sit with each person one to one, visibly, and ask <em>"what would you do if you were in my shoes?"</em> The team goes from 65 to 25 and the restaurant runs better. <a href="founder.html#the-question">The full story →</a></div>
+  </div></div>
+
+  <div class="yr"><span>2019</span></div>
+  <div class="ev left closed"><div class="card">
+    <div class="c-when">November</div>
+    <div class="c-title">The Leaf closes</div>
+    <div class="c-body">Fourteen months. An expensive education in what happens when a franchiser new to franchising treats your outlet as a training ground for his others.</div>
+  </div></div>
+
+  <div class="yr"><span>2020</span></div>
+  <div class="ev right venture"><div class="card">
+    <div class="c-when">15 May</div>
+    <div class="c-title">LUDIFU Academy launches</div>
+    <div class="c-body">Mid-lockdown, with the printing business stalled. Starts with live Excel and PowerPoint workshops at ₹200–₹1,799, taught by his mother's own Excel tutor.</div>
+  </div></div>
+  <div class="ev left press"><div class="card">
+    <div class="c-when">25 August</div>
+    <div class="c-title">The Times of India, Page 2</div>
+    <div class="c-body">Opening story in a series on Mumbaikars who found new work during the pandemic, by Sharmila Ganesan. Over 400 students by this point.</div>
+    <div class="c-tag">Mumbai edition</div>
+  </div></div>
+  <div class="ev right milestone"><div class="card">
+    <div class="c-when">October</div>
+    <div class="c-title">Four live demos a day, every day</div>
+    <div class="c-body">Begins running four live demo sessions daily, professors joining alongside him. Roughly a thousand sessions by hand before a single one is automated. Continues until July 2021.</div>
+  </div></div>
+
+  <div class="yr"><span>2021</span></div>
+  <div class="ev left venture"><div class="card">
+    <div class="c-when">June</div>
+    <div class="c-title">WA.Expert begins</div>
+    <div class="c-body">The WhatsApp automation built so six people could carry three lakh enquiries becomes a product in its own right.</div>
+  </div></div>
+  <div class="ev right venture"><div class="card">
+    <div class="c-when">2021 – present</div>
+    <div class="c-title">ClickToWish</div>
+    <div class="c-body">Automated WhatsApp wishes for birthdays and milestones. Later repriced to ₹15 for 15 people over two years, after learning that people will not pay a premium to be reminded to be thoughtful.</div>
+  </div></div>
+  <div class="ev left milestone"><div class="card">
+    <div class="c-when">July</div>
+    <div class="c-title">The founder removes himself</div>
+    <div class="c-body">The live demo is replaced by EverWebinar, Vimeo, Razorpay, ConvertKit and the WhatsApp Business API. Six people go on to handle work that would ordinarily need thirty.</div>
+  </div></div>
+
+  <div class="yr"><span>2023</span></div>
+  <div class="ev right closed"><div class="card">
+    <div class="c-when">June</div>
+    <div class="c-title">LUDIFU Academy stops open batches</div>
+    <div class="c-body">Three years, 3,00,000+ enquiries, 6,000+ paid students across ten subjects, with a core team of six. Offices reopened and the conditions that created it had changed. Recordings remain online for every past student. <a href="academy.html">The case study →</a></div>
+  </div></div>
+
+  <div class="yr"><span>2025</span></div>
+  <div class="ev left venture"><div class="card">
+    <div class="c-when">January</div>
+    <div class="c-title">Clicarity</div>
+    <div class="c-body">A live operational visibility system for manufacturers — workflows, orders and inventory. Built out of thirty years inside a print business that could never answer one question: <em>where is that job right now?</em></div>
+    <div class="c-tag">The first venture worth funding</div>
+  </div></div>
+  <div class="ev right milestone"><div class="card">
+    <div class="c-when">July</div>
+    <div class="c-title">Twenty years at Paper Print Services ends</div>
+    <div class="c-body">The directorship held since 2005 concludes, after two decades.</div>
+  </div></div>
+
+  <div class="yr"><span>2026</span></div>
+  <div class="ev left press"><div class="card">
+    <div class="c-when">April &amp; May</div>
+    <div class="c-title">PrintWeek and Print Bulletin</div>
+    <div class="c-body">Clicarity covered in the printing and packaging trade press — the industry Puneet has worked inside since 2005.</div>
+  </div></div>
+  <div class="ev right milestone"><div class="card">
+    <div class="c-when">Now</div>
+    <div class="c-title">The first raise in seventeen years</div>
+    <div class="c-body">Fifteen ventures, every one funded from cash flow. Clicarity is the first time he has asked for outside capital. <a href="founder.html#investor-brief">The investor brief →</a></div>
+    <div class="c-tag">Open to conversations</div>
+  </div></div>
+
+</div>
+
+<section class="close-sec">
+  <h2>Four Decades,<br>One <em>Continuous Line.</em></h2>
+  <p>The full detail behind every entry — what each venture was, what it taught, and the stated reason each one closed — sits on the founder page.</p>
+  <a href="founder.html" class="btn-w">Read the Full Story</a>
+  <a href="founder.html#investor-brief" class="btn-g">Investor Brief</a>
+</section>
+
+</div>
+
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-name">LUDI<span>FU</span></div>
+      <div class="ft-tag">Let Us Do It For U — a family of ventures in software, automation, education and print. Mumbai, India.</div>
+    </div>
+    <div class="ft-cols">
+      <div class="ft-col">
+        <h5>The Journey</h5>
+        <a href="timeline.html">Timeline</a>
+        <a href="founder.html">The Founder</a>
+        <a href="founder.html#ventures">All Ventures</a>
+        <a href="founder.html#press">Press</a>
+        <a href="founder.html#press-kit">Copy-ready bios</a>
+      </div>
+      <div class="ft-col">
+        <h5>Ventures</h5>
+        <a href="https://www.clicarity.com" target="_blank" rel="noopener noreferrer">Clicarity</a>
+        <a href="http://www.wa.expert" target="_blank" rel="noopener noreferrer">WA.Expert</a>
+        <a href="academy.html">LUCADEMY</a>
+        <a href="photobooks.html">LUDIFU PhotoBooks</a>
+        <a href="https://www.clicktowish.com" target="_blank" rel="noopener noreferrer">ClickToWish</a>
+      </div>
+      <div class="ft-col">
+        <h5>Company</h5>
+        <a href="index.html">Home</a>
+        <a href="careers.html">Careers</a>
+        <a href="https://wa.me/919867800451" target="_blank" rel="noopener noreferrer">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span>© 2026 LUDIFU. All rights reserved. Mumbai, India.</span>
+    <div>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="shipping-policy.html">Shipping</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919867800451?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20LUDIFU"
+   target="_blank" rel="noopener" id="wa-float" aria-label="Chat with LUDIFU on WhatsApp"
+   style="position:fixed;bottom:80px;right:24px;z-index:9998;width:52px;height:52px;border-radius:50%;
+   background:#25D366;display:flex;align-items:center;justify-content:center;
+   box-shadow:0 4px 16px rgba(37,211,102,.4);text-decoration:none;transition:transform .2s">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true" focusable="false">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.522 5.838L.057 23.804a.5.5 0 0 0 .61.61l5.966-1.465A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.497-5.2-1.367l-.373-.214-3.879.952.969-3.758-.228-.385A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+
+<div id="cookie-bar" role="banner" aria-label="Cookie consent notice">
+  <p>We use cookies to improve your experience and analyse site traffic. By continuing to use this site, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+  <button onclick="document.getElementById('cookie-bar').classList.add('hidden');try{localStorage.setItem('ludifu-cookie-ok','1');}catch(e){}" aria-label="Accept cookies and close banner">Accept &amp; Close</button>
+</div>
+
+<script>
+try{if(localStorage.getItem('ludifu-cookie-ok'))document.getElementById('cookie-bar').classList.add('hidden');}catch(e){}
+
+/* hamburger */
+(function(){
+  var btn=document.getElementById('ham-btn'),menu=document.getElementById('mobile-menu');
+  if(!btn||!menu)return;
+  btn.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    document.getElementById('hb1').style.transform=open?'translateY(7px) rotate(45deg)':'';
+    document.getElementById('hb2').style.opacity=open?'0':'1';
+    document.getElementById('hb3').style.transform=open?'translateY(-7px) rotate(-45deg)':'';
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&menu.classList.contains('open')){
+      menu.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.focus();
+    }
+  });
+})();
+
+/* reveal on scroll */
+(function(){
+  var evs=document.querySelectorAll('.ev');
+  if(!('IntersectionObserver' in window)){
+    evs.forEach(function(e){e.classList.add('in');}); return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  },{rootMargin:'0px 0px -8% 0px',threshold:.05});
+  evs.forEach(function(e){io.observe(e);});
+})();
+
+/* progress bar + rail fill */
+(function(){
+  var bar=document.getElementById('progress'), fill=document.getElementById('railfill'),
+      wrap=document.querySelector('.tl-wrap'), ticking=false;
+  function upd(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(window.scrollY/h)*100:0)+'%';
+    if(wrap&&fill){
+      var r=wrap.getBoundingClientRect(), vh=window.innerHeight;
+      var p=(vh*0.5-r.top)/r.height;
+      fill.style.height=Math.max(0,Math.min(1,p))*100+'%';
+    }
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){
+    if(!ticking){ window.requestAnimationFrame(upd); ticking=true; }
+  },{passive:true});
+  upd();
+})();
+
+/* filters */
+function filt(btn,type){
+  document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('on');});
+  btn.classList.add('on');
+  document.querySelectorAll('.ev').forEach(function(e){
+    var show = (type==='all') || e.classList.contains(type);
+    e.classList.toggle('hide',!show);
+    if(show) e.classList.add('in');
+  });
+  document.querySelectorAll('.yr').forEach(function(y){
+    var n=y.nextElementSibling, any=false;
+    while(n && !n.classList.contains('yr')){
+      if(n.classList.contains('ev') && !n.classList.contains('hide')){any=true;break;}
+      n=n.nextElementSibling;
+    }
+    y.style.display = any ? '' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
