@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     LUDIFU WEBSITE  ·  v2.23.1  ·  2026-09-12
+     LUDIFU WEBSITE  ·  v2.23.2  ·  2026-09-12
      File: careers.html
      Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
      Fonts: Cormorant Garamond (display) + Outfit (body)
@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="2.23.1">
+<meta name="version" content="2.23.2">
 <meta name="build-date" content="2026-09-12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Careers & Internships | LUDIFU, Mumbai</title>
@@ -638,19 +638,29 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
       </div>
 
       <div id="academicBlock">
-<div class="form-section-label">Academic Record</div>
-        <p class="form-hint">Share your final year percentages for school, and your current CGPA or percentage.</p>
+        <div class="form-section-label">Academic Record</div>
+        <p class="form-hint">We look at consistency across years, not just your final score — so please share each one you have. Approximate is fine if you don't remember exactly.</p>
         <div class="form-row-3">
           <div class="field">
-            <label for="f_10">10th Standard %</label>
-            <input type="text" id="f_10" placeholder="e.g. 88%">
+            <label for="f_8">8th Standard %</label>
+            <input type="text" id="f_8" placeholder="e.g. 84%">
           </div>
+          <div class="field">
+            <label for="f_9">9th Standard %</label>
+            <input type="text" id="f_9" placeholder="e.g. 87%">
+          </div>
+          <div class="field">
+            <label for="f_10">10th Standard %</label>
+            <input type="text" id="f_10" placeholder="e.g. 91%">
+          </div>
+        </div>
+        <div class="form-row-2">
           <div class="field">
             <label for="f_12">12th Standard %</label>
             <input type="text" id="f_12" placeholder="e.g. 82%">
           </div>
           <div class="field">
-            <label for="f_cgpa">Current CGPA / %</label>
+            <label for="f_cgpa" id="lbl_cgpa">Current CGPA / %</label>
             <input type="text" id="f_cgpa" placeholder="e.g. 8.4 CGPA">
           </div>
         </div>
@@ -865,7 +875,7 @@ function toggleStudentFields(){
   document.getElementById('studentBlock').style.display      = studying ? 'block' : 'none';
   document.getElementById('gradBlock').style.display         = grad ? 'block' : 'none';
   document.getElementById('professionalBlock').style.display = working ? 'block' : 'none';
-  document.getElementById('academicBlock').style.display = working ? 'none' : 'block';
+  document.getElementById('academicBlock').style.display = 'block';
 
   var instLabel, instPlaceholder, timeLabel, timePlaceholder;
   if (studying) {
@@ -889,6 +899,10 @@ function toggleStudentFields(){
   document.getElementById('f_inst').placeholder = instPlaceholder;
   document.getElementById('lbl_timings').innerHTML = timeLabel + (working || studying ? ' <span class="req">*</span>' : '');
   document.getElementById('f_timings').placeholder = timePlaceholder;
+  var cg = document.getElementById('lbl_cgpa');
+  if (cg) cg.textContent = studying ? 'Current CGPA / %'
+                         : grad     ? 'Final CGPA / %'
+                         :            'Highest qualification — CGPA / %';
 }
 
 function v(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
@@ -951,27 +965,25 @@ function sendApplication(){
     L.push(line('College Location', v('f_collegeloc')));
     L.push(line('Year of Study', v('f_year')));
     L.push(line('College Timings', v('f_timings')));
-    var acad = [];
-    if(v('f_10'))   acad.push('10th: ' + v('f_10'));
-    if(v('f_12'))   acad.push('12th: ' + v('f_12'));
-    if(v('f_cgpa')) acad.push('Current: ' + v('f_cgpa'));
-    L.push(line('Academics', acad.length ? acad.join(' | ') : 'To be shared'));
   } else if(grad){
     L.push(line('College', v('f_inst')));
     if(v('f_gradyear'))     L.push(line('Graduated', v('f_gradyear')));
     if(v('f_availability')) L.push(line('Available From', v('f_availability')));
     if(v('f_timings'))      L.push(line('Current Commitments', v('f_timings')));
-    var a2 = [];
-    if(v('f_10'))   a2.push('10th: ' + v('f_10'));
-    if(v('f_12'))   a2.push('12th: ' + v('f_12'));
-    if(v('f_cgpa')) a2.push('Final: ' + v('f_cgpa'));
-    if(a2.length) L.push(line('Academics', a2.join(' | ')));
   } else {
     L.push(line('Current/Last Company', v('f_inst')));
     if(v('f_exp'))    L.push(line('Experience', v('f_exp')));
     if(v('f_notice')) L.push(line('Notice Period', v('f_notice')));
     L.push(line('Work Timings', v('f_timings')));
   }
+
+  var acad = [];
+  if(v('f_8'))    acad.push('8th: ' + v('f_8'));
+  if(v('f_9'))    acad.push('9th: ' + v('f_9'));
+  if(v('f_10'))   acad.push('10th: ' + v('f_10'));
+  if(v('f_12'))   acad.push('12th: ' + v('f_12'));
+  if(v('f_cgpa')) acad.push((studying ? 'Current: ' : grad ? 'Final: ' : 'Highest: ') + v('f_cgpa'));
+  L.push(line('Academics', acad.length ? acad.join(' | ') : 'To be shared'));
 
   L.push(line('Area of Residence', v('f_area')));
   L.push(line('Travel Time (one way)', v('f_travel')));
