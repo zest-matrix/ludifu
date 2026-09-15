@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     LUDIFU WEBSITE  ·  v2.23.0  ·  2026-09-12
+     LUDIFU WEBSITE  ·  v2.23.1  ·  2026-09-12
      File: careers.html
      Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
      Fonts: Cormorant Garamond (display) + Outfit (body)
@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="2.23.0">
+<meta name="version" content="2.23.1">
 <meta name="build-date" content="2026-09-12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Careers & Internships | LUDIFU, Mumbai</title>
@@ -568,6 +568,15 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
         </div>
       </div>
 
+      <div class="field">
+        <label>Where are you right now? <span class="req">*</span></label>
+        <div class="radio-row">
+          <label class="radio-pill"><input type="radio" name="status" value="Currently studying" checked onchange="toggleStudentFields()"> Still studying</label>
+          <label class="radio-pill"><input type="radio" name="status" value="Recently graduated" onchange="toggleStudentFields()"> Recently graduated</label>
+          <label class="radio-pill"><input type="radio" name="status" value="Working" onchange="toggleStudentFields()"> Working</label>
+        </div>
+      </div>
+
       <div class="form-section-label">About You</div>
       <div class="form-row-2">
         <div class="field">
@@ -612,7 +621,24 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
           </div>
         </div>
 
-        <div class="form-section-label">Academic Record</div>
+        
+      </div>
+
+      <div id="gradBlock" style="display:none">
+        <div class="form-row-2">
+          <div class="field">
+            <label for="f_gradyear">Year you graduated</label>
+            <input type="text" id="f_gradyear" placeholder="e.g. 2026">
+          </div>
+          <div class="field">
+            <label for="f_availability">When can you start?</label>
+            <input type="text" id="f_availability" placeholder="e.g. Immediately">
+          </div>
+        </div>
+      </div>
+
+      <div id="academicBlock">
+<div class="form-section-label">Academic Record</div>
         <p class="form-hint">Share your final year percentages for school, and your current CGPA or percentage.</p>
         <div class="form-row-3">
           <div class="field">
@@ -713,8 +739,8 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
       <div class="faq-a">Yes — a completion certificate and a letter of recommendation are provided at the end of a satisfactorily completed internship.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Can I work around my college schedule?</div>
-      <div class="faq-a">If you have college commitments or exams, a reduced schedule can be agreed upfront. Discuss it when you apply rather than after joining.</div>
+      <div class="faq-q">I am still studying — can I work around my college schedule?</div>
+      <div class="faq-a">Yes. If you have lectures, practicals or exams, a reduced schedule can be agreed upfront — the application form asks for your timings precisely so we can plan around them. Raise it when you apply rather than after joining.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Why do you ask about travel time?</div>
@@ -831,22 +857,38 @@ function preselectRole(role){
 }
 
 function toggleStudentFields(){
-  var jt = document.querySelector('input[name="jobtype"]:checked').value;
-  var isIntern = (jt === 'Internship');
-  document.getElementById('studentBlock').style.display = isIntern ? 'block' : 'none';
-  document.getElementById('professionalBlock').style.display = isIntern ? 'none' : 'block';
-  document.getElementById('lbl_inst').innerHTML = isIntern
-    ? 'College name <span class="req">*</span>'
-    : 'Current or last company <span class="req">*</span>';
-  document.getElementById('lbl_timings').innerHTML = isIntern
-    ? 'Current college timings <span class="req">*</span>'
-    : 'Current work timings <span class="req">*</span>';
-  document.getElementById('f_inst').placeholder = isIntern
-    ? 'Full name of your college'
-    : 'Name of your current or most recent employer';
-  document.getElementById('f_timings').placeholder = isIntern
-    ? 'e.g. 7:30 AM – 1:30 PM, Mon–Sat'
-    : 'e.g. 9:30 AM – 6:30 PM, Mon–Fri';
+  var st = document.querySelector('input[name="status"]:checked').value;
+  var studying = (st === 'Currently studying');
+  var grad     = (st === 'Recently graduated');
+  var working  = (st === 'Working');
+
+  document.getElementById('studentBlock').style.display      = studying ? 'block' : 'none';
+  document.getElementById('gradBlock').style.display         = grad ? 'block' : 'none';
+  document.getElementById('professionalBlock').style.display = working ? 'block' : 'none';
+  document.getElementById('academicBlock').style.display = working ? 'none' : 'block';
+
+  var instLabel, instPlaceholder, timeLabel, timePlaceholder;
+  if (studying) {
+    instLabel = 'College name';
+    instPlaceholder = 'Full name of your college';
+    timeLabel = 'Current college timings';
+    timePlaceholder = 'e.g. 7:30 AM – 1:30 PM, Mon–Sat';
+  } else if (grad) {
+    instLabel = 'College you graduated from';
+    instPlaceholder = 'Full name of your college';
+    timeLabel = 'Any current commitments?';
+    timePlaceholder = 'e.g. None / part-time work / exams in May';
+  } else {
+    instLabel = 'Current or most recent company';
+    instPlaceholder = 'Name of your employer';
+    timeLabel = 'Current work timings';
+    timePlaceholder = 'e.g. 9:30 AM – 6:30 PM, Mon–Fri';
+  }
+
+  document.getElementById('lbl_inst').innerHTML = instLabel + ' <span class="req">*</span>';
+  document.getElementById('f_inst').placeholder = instPlaceholder;
+  document.getElementById('lbl_timings').innerHTML = timeLabel + (working || studying ? ' <span class="req">*</span>' : '');
+  document.getElementById('f_timings').placeholder = timePlaceholder;
 }
 
 function v(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
@@ -854,19 +896,29 @@ function v(id){ var el = document.getElementById(id); return el ? el.value.trim(
 function sendApplication(){
   var err = document.getElementById('formError');
   var jt  = document.querySelector('input[name="jobtype"]:checked').value;
-  var isIntern = (jt === 'Internship');
+  var st  = document.querySelector('input[name="status"]:checked').value;
+  var studying = (st === 'Currently studying');
+  var grad     = (st === 'Recently graduated');
+  var working  = (st === 'Working');
+
+  var instWord = studying ? 'your college name'
+               : grad     ? 'the college you graduated from'
+               :            'your current or most recent company';
 
   var required = [
     ['f_role','which role you are applying for'],
     ['f_name','your full name'],
-    ['f_inst', isIntern ? 'your college name' : 'your current or last company'],
+    ['f_inst', instWord],
     ['f_area','your area of residence'],
-    ['f_timings', isIntern ? 'your college timings' : 'your work timings'],
     ['f_travel','your travel time']
   ];
-  if(isIntern){
+  if(studying){
+    required.push(['f_timings','your college timings']);
     required.push(['f_collegeloc','your college location']);
     required.push(['f_year','which year you are in']);
+  }
+  if(working){
+    required.push(['f_timings','your work timings']);
   }
 
   var missing = [];
@@ -882,34 +934,48 @@ function sendApplication(){
   err.style.display = 'none';
 
   var logic = document.querySelector('input[name="logic"]:checked').value;
+  var n = 1;
+  function line(label, val){ return (n++) + '. ' + label + ': ' + val; }
 
   var L = [];
   L.push('Hi, I would like to apply at LUDIFU.');
   L.push('');
   L.push('Role: ' + v('f_role'));
-  L.push('A. ' + jt);
+  L.push('Applying for: ' + jt);
+  L.push('Current status: ' + st);
   L.push('');
-  L.push('1. Full Name: ' + v('f_name'));
-  L.push('2. ' + (isIntern ? 'College' : 'Current/Last Company') + ': ' + v('f_inst'));
-  L.push('3. Area of Residence: ' + v('f_area'));
-  L.push('4. Current ' + (isIntern ? 'College' : 'Work') + ' Timings: ' + v('f_timings'));
+  L.push(line('Full Name', v('f_name')));
 
-  if(isIntern){
-    L.push('5. College Location: ' + v('f_collegeloc'));
-    L.push('6. Year of Study: ' + v('f_year'));
+  if(studying){
+    L.push(line('College', v('f_inst')));
+    L.push(line('College Location', v('f_collegeloc')));
+    L.push(line('Year of Study', v('f_year')));
+    L.push(line('College Timings', v('f_timings')));
     var acad = [];
     if(v('f_10'))   acad.push('10th: ' + v('f_10'));
     if(v('f_12'))   acad.push('12th: ' + v('f_12'));
     if(v('f_cgpa')) acad.push('Current: ' + v('f_cgpa'));
-    L.push('7. Academics: ' + (acad.length ? acad.join(' | ') : 'To be shared'));
-    L.push('8. Travel Time (one way): ' + v('f_travel'));
-    L.push('9. Enjoy maths & logical problem solving: ' + logic);
+    L.push(line('Academics', acad.length ? acad.join(' | ') : 'To be shared'));
+  } else if(grad){
+    L.push(line('College', v('f_inst')));
+    if(v('f_gradyear'))     L.push(line('Graduated', v('f_gradyear')));
+    if(v('f_availability')) L.push(line('Available From', v('f_availability')));
+    if(v('f_timings'))      L.push(line('Current Commitments', v('f_timings')));
+    var a2 = [];
+    if(v('f_10'))   a2.push('10th: ' + v('f_10'));
+    if(v('f_12'))   a2.push('12th: ' + v('f_12'));
+    if(v('f_cgpa')) a2.push('Final: ' + v('f_cgpa'));
+    if(a2.length) L.push(line('Academics', a2.join(' | ')));
   } else {
-    if(v('f_exp'))    L.push('5. Experience: ' + v('f_exp'));
-    if(v('f_notice')) L.push('6. Notice Period / Availability: ' + v('f_notice'));
-    L.push('7. Travel Time (one way): ' + v('f_travel'));
-    L.push('8. Enjoy maths & logical problem solving: ' + logic);
+    L.push(line('Current/Last Company', v('f_inst')));
+    if(v('f_exp'))    L.push(line('Experience', v('f_exp')));
+    if(v('f_notice')) L.push(line('Notice Period', v('f_notice')));
+    L.push(line('Work Timings', v('f_timings')));
   }
+
+  L.push(line('Area of Residence', v('f_area')));
+  L.push(line('Travel Time (one way)', v('f_travel')));
+  L.push(line('Enjoy maths & logical problem solving', logic));
 
   if(v('f_note')){
     L.push('');
@@ -923,7 +989,5 @@ function sendApplication(){
   var msg = L.join('\n');
   window.open('https://wa.me/919867800451?text=' + encodeURIComponent(msg), '_blank');
 }
-</script>
 
-</body>
-</html>
+

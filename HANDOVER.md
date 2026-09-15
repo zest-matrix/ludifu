@@ -1,6 +1,6 @@
 # LUDIFU Website — Handover Document
 
-**Version:** 2.23.0
+**Version:** 2.23.1
 **Last updated:** 12 September 2026
 **Owner:** Puneet Rawat, Founder — LUDIFU, Mumbai
 **Contact:** +91 98678 00451 (WhatsApp)
@@ -254,7 +254,8 @@ These must be resolved before or shortly after launch.
 
 | Version | Date | Changes |
 |---|---|---|
-| **2.23.0** | 14 Sep 2026 | Timeline made discoverable and deepened. New **timeline teaser** section on founder.html with a 7-row visual preview and CTA. Fixed duplicate footer link and trimmed founder nav back to 5. Timeline enriched 35→40 events: internships split out, the Zodiac/Etam/HUL engine given its own 2008 milestone, CondomPoint origin and CNF-agent margin detail, Prithvi Haldea credentials, the 2017 theatre-ads lesson in his own words, and the 196→700→4,500 intern compounding as a single thread. |
+| **2.23.1** | 14 Sep 2026 | **Careers form logic fix.** Form conflated job type with current status — asked internship applicants for a company name and full-time applicants for college details. Now two independent questions: what they are applying for (internship / full-time) and where they are now (studying / recently graduated / working). Field labels, required-field validation and the generated WhatsApp message all follow **status**, not job type. New graduate block (graduation year, availability). Academic record shows for students and graduates, hides for working professionals. |
+| 2.23.0 | 14 Sep 2026 | Timeline made discoverable and deepened. New **timeline teaser** section on founder.html with a 7-row visual preview and CTA. Fixed duplicate footer link and trimmed founder nav back to 5. Timeline enriched 35→40 events: internships split out, the Zodiac/Etam/HUL engine given its own 2008 milestone, CondomPoint origin and CNF-agent margin detail, Prithvi Haldea credentials, the 2017 theatre-ads lesson in his own words, and the 196→700→4,500 intern compounding as a single thread. |
 | 2.22.0 | 14 Sep 2026 | **Anchor offset bug fixed site-wide** — no page had `scroll-margin-top`, so every in-page link landed with its heading hidden under the 68px sticky nav. Now 88px on all 11 pages. New **section rail** on founder.html: fixed left-side dot navigation, 15 sections, labels expand on hover, active section tracked by IntersectionObserver, hidden below 1180px. Homepage gains a **full-record strip** linking to timeline and founder — deliberately not 15 venture cards, which would bury the five operating products. |
 | 2.21.1 | 14 Sep 2026 | **Homepage consistency fix.** Two v2.8.0 replacements had silently failed (string used `&amp;` where file had `&`) — Clicarity card tagline and section heading still read "Solve JSR & TAT". More seriously, the homepage was still **selling closed LUCADEMY batches**: "12+ Courses · Live · Certified", "Explore Courses →", "free 1-hour workshops anyone can join today", and calling it "our most active venture". All repositioned to past tense with the case-study framing, matching academy.html. Footer links updated. **Lesson: verify string replacements actually fired — check counts after, not just exit code.** |
 | 2.21.0 | 14 Sep 2026 | **New page: `timeline.html`** — scroll-driven vertical timeline, 1987→2026. Alternating cards on desktop, single column on mobile, colour-coded by type (venture / closure / press / milestone). Filter chips, reading-progress bar, gradient rail that fills on scroll, IntersectionObserver reveal with `prefers-reduced-motion` respected. No JS libraries. Wired into all nav/footers, sitemap, and `/journey` redirect. |
@@ -344,4 +345,4 @@ cd .. && zip -r ludifu-site-v2.5.0.zip ludifu-site -x "*.DS_Store"
 
 ---
 
-*End of handover — LUDIFU Website v2.23.0*
+*End of handover — LUDIFU Website v2.23.1*
