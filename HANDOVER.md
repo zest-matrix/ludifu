@@ -1,6 +1,6 @@
 # LUDIFU Website — Handover Document
 
-**Version:** 2.24.0
+**Version:** 2.24.1
 **Last updated:** 12 September 2026
 **Owner:** Puneet Rawat, Founder — LUDIFU, Mumbai
 **Contact:** +91 98678 00451 (WhatsApp)
@@ -254,7 +254,8 @@ These must be resolved before or shortly after launch.
 
 | Version | Date | Changes |
 |---|---|---|
-| **2.24.0** | 14 Sep 2026 | **contact@ludifu.com added site-wide** (12 pages) — site previously had zero email addresses, blocking investors, placement cells and press who will not use WhatsApp for first contact. Added to Organization schema. **New page: `press.html`** — all coverage with dates, page numbers and live links where available. Research surfaced a **7th publication (SMEStreet)** and recovered the LBB and BW Disrupt URLs. Count corrected 6→8 across founder.html. `/media` redirects here. **Decision: `ventures.html` dropped as redundant** — founder.html#ventures plus the homepage record strip already cover it. |
+| **2.24.1** | 14 Sep 2026 | **Fix: press.html was invisible on desktop.** The v2.24.0 wiring landed the link only in the mobile menu on index.html. Homepage press strip upgraded from one publication to five named mastheads plus an "All 8 →" link, and the whole strip is now clickable. Press added to desktop nav, to a new **The Journey** footer column (replacing the thin "Academy" column), and as a third button on the record strip. |
+| 2.24.0 | 14 Sep 2026 | **contact@ludifu.com added site-wide** (12 pages) — site previously had zero email addresses, blocking investors, placement cells and press who will not use WhatsApp for first contact. Added to Organization schema. **New page: `press.html`** — all coverage with dates, page numbers and live links where available. Research surfaced a **7th publication (SMEStreet)** and recovered the LBB and BW Disrupt URLs. Count corrected 6→8 across founder.html. `/media` redirects here. **Decision: `ventures.html` dropped as redundant** — founder.html#ventures plus the homepage record strip already cover it. |
 | 2.23.2 | 14 Sep 2026 | Academic record now shown for **all** applicant statuses including working professionals (client requirement — used as a consistency signal, not just a fresher filter). Fields expanded to 8th / 9th / 10th / 12th / current-final-highest. CGPA label adapts by status. Form hint explains why school years are asked for. **⚠ Open: client first specified 9th/10th/11th, later 8th/9th/10th — built as 8/9/10 per latest instruction, needs confirming.** |
 | 2.23.1 | 14 Sep 2026 | **Careers form logic fix.** Form conflated job type with current status — asked internship applicants for a company name and full-time applicants for college details. Now two independent questions: what they are applying for (internship / full-time) and where they are now (studying / recently graduated / working). Field labels, required-field validation and the generated WhatsApp message all follow **status**, not job type. New graduate block (graduation year, availability). Academic record shows for students and graduates, hides for working professionals. |
 | 2.23.0 | 14 Sep 2026 | Timeline made discoverable and deepened. New **timeline teaser** section on founder.html with a 7-row visual preview and CTA. Fixed duplicate footer link and trimmed founder nav back to 5. Timeline enriched 35→40 events: internships split out, the Zodiac/Etam/HUL engine given its own 2008 milestone, CondomPoint origin and CNF-agent margin detail, Prithvi Haldea credentials, the 2017 theatre-ads lesson in his own words, and the 196→700→4,500 intern compounding as a single thread. |
@@ -347,4 +348,4 @@ cd .. && zip -r ludifu-site-v2.5.0.zip ludifu-site -x "*.DS_Store"
 
 ---
 
-*End of handover — LUDIFU Website v2.24.0*
+*End of handover — LUDIFU Website v2.24.1*

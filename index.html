@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     LUDIFU WEBSITE  ·  v2.24.0  ·  2026-09-12
+     LUDIFU WEBSITE  ·  v2.24.1  ·  2026-09-12
      File: index.html
      Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
      Fonts: Cormorant Garamond (display) + Outfit (body)
@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="2.24.0">
+<meta name="version" content="2.24.1">
 <meta name="build-date" content="2026-09-12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LUDIFU — Let Us Do It For U | Mumbai Ventures</title>
@@ -423,6 +423,10 @@ footer{
 
 /* Anchor targets clear the sticky nav (68px) */
 section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
+
+.press-strip{transition:background .2s}
+.press-strip:hover{background:rgba(255,255,255,.04)}
+@media(max-width:900px){.press-strip{padding:14px 22px!important}}
 </style>
 
   <!-- Open Graph -->
@@ -523,12 +527,9 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
   </a>
   <div class="nav-links nav-links-desktop">
     <a href="#ventures">Our Ventures</a>
-    <a href="academy.html">Academy</a>
-    <a href="#clicarity">Clicarity</a>
-    <a href="photobooks.html">PhotoBooks</a>
-    <a href="#story">Our Story</a>
     <a href="timeline.html">Timeline</a>
     <a href="founder.html">Founder</a>
+    <a href="press.html">Press</a>
     <a href="careers.html">Careers</a>
   </div>
 <button class="hamburger" id="ham-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"
@@ -555,17 +556,23 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
 
 <!-- PRESS STRIP -->
 <div style="background:#1e1e1e;border-bottom:1px solid rgba(255,255,255,.08)">
-  <div style="max-width:1300px;margin:0 auto;padding:15px 72px;display:flex;
-    align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;text-align:center">
-    <span style="font-size:.68rem;letter-spacing:2.5px;text-transform:uppercase;
-      color:rgba(255,255,255,.4);font-weight:500">As featured in</span>
-    <span style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;
-      color:#fff;letter-spacing:.5px">The Times of India</span>
-    <span style="width:1px;height:16px;background:rgba(255,255,255,.2)"></span>
-    <span style="font-size:.76rem;color:#c9a84c">Page 2 · Mumbai · Aug 2020</span>
-    <a href="academy.html" style="font-size:.74rem;color:rgba(255,255,255,.55);
-      text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:1px">Read the story →</a>
-  </div>
+  <a href="press.html" style="display:block;text-decoration:none;max-width:1300px;margin:0 auto;
+    padding:15px 72px" class="press-strip">
+    <div style="display:flex;align-items:center;justify-content:center;gap:9px 18px;flex-wrap:wrap;text-align:center">
+      <span style="font-size:.68rem;letter-spacing:2.5px;text-transform:uppercase;
+        color:rgba(255,255,255,.4);font-weight:500">As featured in</span>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:#fff">The Times of India</span>
+      <span style="width:1px;height:14px;background:rgba(255,255,255,.18)"></span>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:#fff">Hindustan Times</span>
+      <span style="width:1px;height:14px;background:rgba(255,255,255,.18)"></span>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:#fff">Business World</span>
+      <span style="width:1px;height:14px;background:rgba(255,255,255,.18)"></span>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:#fff">Mid-day</span>
+      <span style="width:1px;height:14px;background:rgba(255,255,255,.18)"></span>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:#fff">PrintWeek</span>
+      <span style="font-size:.74rem;color:#c9a84c;border-bottom:1px solid rgba(201,168,76,.4);padding-bottom:1px">All 8 →</span>
+    </div>
+  </a>
 </div>
 
 <!-- HERO -->
@@ -798,6 +805,7 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
     <div style="display:flex;flex-direction:column;gap:11px;min-width:210px">
       <a href="timeline.html" style="background:#c9a84c;color:#241c12;padding:15px 26px;border-radius:7px;font-size:.82rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;text-align:center">The Timeline →</a>
       <a href="founder.html" style="border:1.5px solid rgba(250,248,244,.28);color:rgba(250,248,244,.85);padding:15px 26px;border-radius:7px;font-size:.82rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;text-decoration:none;text-align:center">Meet the Founder →</a>
+      <a href="press.html" style="border:1.5px solid rgba(250,248,244,.28);color:rgba(250,248,244,.85);padding:15px 26px;border-radius:7px;font-size:.82rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;text-decoration:none;text-align:center">Press &amp; Coverage →</a>
     </div>
   </div>
 </section>
@@ -1001,10 +1009,12 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
         <a href="photobooks.html">LUDIFU PhotoBooks</a>
       </div>
       <div class="footer-col">
-        <h5>Academy</h5>
-        <a href="academy.html">The Case Study</a>
-        <a href="academy.html#training">Training on Request</a>
-        <a href="https://ludifurecordings.thinkific.com/collections" target="_blank" rel="noopener">Recordings</a>
+        <h5>The Journey</h5>
+        <a href="timeline.html">Timeline</a>
+        <a href="founder.html">The Founder</a>
+        <a href="press.html">Press &amp; Coverage</a>
+        <a href="academy.html">LUCADEMY Case Study</a>
+        <a href="founder.html#press-kit">Press Kit</a>
       </div>
       <div class="footer-col">
         <h5>Company</h5>
