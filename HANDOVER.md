@@ -1,6 +1,6 @@
 # LUDIFU Website — Handover Document
 
-**Version:** 2.24.1
+**Version:** 2.24.2
 **Last updated:** 12 September 2026
 **Owner:** Puneet Rawat, Founder — LUDIFU, Mumbai
 **Contact:** +91 98678 00451 (WhatsApp)
@@ -119,7 +119,12 @@ Loaded async from Google Fonts with `media="print" onload="this.media='all'"` + 
 ### Nav structure (important)
 The nav logo must stay in **normal flex flow**, wrapped in `.nav-left` alongside the back-link. It must **never** use `position:absolute; left:50%` — that caused a visual collision in v2.5.0 when nav links grew past ~6 items and ran underneath the centred logo.
 
-Keep desktop nav to a **maximum of 5 links**. Everything else belongs in the mobile menu and footer. Desktop breakpoint is `1100px` on academy.html.
+**Nav link count is a per-page judgement, not a fixed rule.** The constraint is whether the links fit beside the logo without wrapping or colliding — not an arbitrary number.
+
+- `academy.html` and `founder.html` use longer section labels and a wider logo, so they cap around 5 and collapse at `1100px`.
+- `index.html` uses short labels and a compact logo mark; **8 links fit comfortably** and it collapses at `960px`.
+
+Measure before trimming. An earlier revision cut the homepage from 8 links to 5 by applying the academy page's constraint to a page that never had it, removing direct access to Academy, Clicarity and PhotoBooks for no benefit.
 
 ### Hard rules
 - ❌ **No emoji as UI icons on careers.html** — removed deliberately; reads as unserious to placement cells and academic audiences. Emoji are acceptable on index.html venture cards and photobooks.
@@ -254,7 +259,8 @@ These must be resolved before or shortly after launch.
 
 | Version | Date | Changes |
 |---|---|---|
-| **2.24.1** | 14 Sep 2026 | **Fix: press.html was invisible on desktop.** The v2.24.0 wiring landed the link only in the mobile menu on index.html. Homepage press strip upgraded from one publication to five named mastheads plus an "All 8 →" link, and the whole strip is now clickable. Press added to desktop nav, to a new **The Journey** footer column (replacing the thin "Academy" column), and as a third button on the record strip. |
+| **2.24.2** | 16 Sep 2026 | **Reverted an over-eager nav trim.** v2.24.1 cut the homepage nav from 8 links to 5, removing Academy, Clicarity and PhotoBooks — by applying the 5-link rule written for academy.html, whose absolutely-positioned centre logo caused the original collision. index.html never had that layout and 8 links fit with room to spare. Restored all 8 with Press included; "Our Story" dropped as it is a same-page anchor. Handover rule rewritten from a fixed number to a per-page measurement. |
+| 2.24.1 | 14 Sep 2026 | **Fix: press.html was invisible on desktop.** The v2.24.0 wiring landed the link only in the mobile menu on index.html. Homepage press strip upgraded from one publication to five named mastheads plus an "All 8 →" link, and the whole strip is now clickable. Press added to desktop nav, to a new **The Journey** footer column (replacing the thin "Academy" column), and as a third button on the record strip. |
 | 2.24.0 | 14 Sep 2026 | **contact@ludifu.com added site-wide** (12 pages) — site previously had zero email addresses, blocking investors, placement cells and press who will not use WhatsApp for first contact. Added to Organization schema. **New page: `press.html`** — all coverage with dates, page numbers and live links where available. Research surfaced a **7th publication (SMEStreet)** and recovered the LBB and BW Disrupt URLs. Count corrected 6→8 across founder.html. `/media` redirects here. **Decision: `ventures.html` dropped as redundant** — founder.html#ventures plus the homepage record strip already cover it. |
 | 2.23.2 | 14 Sep 2026 | Academic record now shown for **all** applicant statuses including working professionals (client requirement — used as a consistency signal, not just a fresher filter). Fields expanded to 8th / 9th / 10th / 12th / current-final-highest. CGPA label adapts by status. Form hint explains why school years are asked for. **⚠ Open: client first specified 9th/10th/11th, later 8th/9th/10th — built as 8/9/10 per latest instruction, needs confirming.** |
 | 2.23.1 | 14 Sep 2026 | **Careers form logic fix.** Form conflated job type with current status — asked internship applicants for a company name and full-time applicants for college details. Now two independent questions: what they are applying for (internship / full-time) and where they are now (studying / recently graduated / working). Field labels, required-field validation and the generated WhatsApp message all follow **status**, not job type. New graduate block (graduation year, availability). Academic record shows for students and graduates, hides for working professionals. |
@@ -348,4 +354,4 @@ cd .. && zip -r ludifu-site-v2.5.0.zip ludifu-site -x "*.DS_Store"
 
 ---
 
-*End of handover — LUDIFU Website v2.24.1*
+*End of handover — LUDIFU Website v2.24.2*
