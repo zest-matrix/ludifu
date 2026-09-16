@@ -24,3 +24,4 @@ index.html|ventures|Clicarity
 founder.html|investor-brief|Investor brief
 founder.html|the-question|What would you do
 timeline.html|main-content|One Line,
+press.html|coverage|Times of India
