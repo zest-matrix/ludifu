@@ -1,6 +1,6 @@
 # LUDIFU Website — Handover Document
 
-**Version:** 2.25.0
+**Version:** 2.25.1
 **Last updated:** 12 September 2026
 **Owner:** Puneet Rawat, Founder — LUDIFU, Mumbai
 **Contact:** +91 98678 00451 (WhatsApp)
@@ -259,7 +259,8 @@ These must be resolved before or shortly after launch.
 
 | Version | Date | Changes |
 |---|---|---|
-| **2.25.0** | 16 Sep 2026 | Careers: **academic criteria published on the form** (80% in 8th/9th/10th, 8.50 CGPA) as a visible four-tile box. Each mark now has a **unit dropdown** (% / GPA / CGPA / Grade) so students enter what their marksheet says rather than converting. Live ✓ / ! flags per field; below-threshold applicants are not blocked but are invited to make their case, and the WhatsApp message marks the value "(below stated minimum)" for fast triage. New **#share** section with a copy-ready referral message for students to forward. **⚠ Four unresolved conflicts between the referral message and the site: stipend (removed from site in v2.5.0, present in message), two shift timings (site has one), six roles in message vs five different ones on site, and the 80% criteria.** |
+| **2.25.1** | 16 Sep 2026 | **Academic checker rebuilt.** Unit dropdowns removed (friction) and replaced with auto-detection: a value ≤10 reads as CGPA, >10 as percentage, shown as a suffix inside the field. Feedback made loud — the whole input turns green or amber with a message beside it ("Meets our criteria" / "Below our usual minimum of 80%"); the previous single-character flag was invisible. **All four conflicts resolved per client:** stipend restored for internships only (₹10–12k full shift, ₹6–8k short shift), two shifts documented across pills, logistics, FAQ and the consent line, share message rebuilt with the five real site roles, and JobPosting schema now carries educationRequirements, baseSalary and workHours. |
+| 2.25.0 | 16 Sep 2026 | Careers: **academic criteria published on the form** (80% in 8th/9th/10th, 8.50 CGPA) as a visible four-tile box. Each mark now has a **unit dropdown** (% / GPA / CGPA / Grade) so students enter what their marksheet says rather than converting. Live ✓ / ! flags per field; below-threshold applicants are not blocked but are invited to make their case, and the WhatsApp message marks the value "(below stated minimum)" for fast triage. New **#share** section with a copy-ready referral message for students to forward. **⚠ Four unresolved conflicts between the referral message and the site: stipend (removed from site in v2.5.0, present in message), two shift timings (site has one), six roles in message vs five different ones on site, and the 80% criteria.** |
 | 2.24.2 | 16 Sep 2026 | **Reverted an over-eager nav trim.** v2.24.1 cut the homepage nav from 8 links to 5, removing Academy, Clicarity and PhotoBooks — by applying the 5-link rule written for academy.html, whose absolutely-positioned centre logo caused the original collision. index.html never had that layout and 8 links fit with room to spare. Restored all 8 with Press included; "Our Story" dropped as it is a same-page anchor. Handover rule rewritten from a fixed number to a per-page measurement. |
 | 2.24.1 | 14 Sep 2026 | **Fix: press.html was invisible on desktop.** The v2.24.0 wiring landed the link only in the mobile menu on index.html. Homepage press strip upgraded from one publication to five named mastheads plus an "All 8 →" link, and the whole strip is now clickable. Press added to desktop nav, to a new **The Journey** footer column (replacing the thin "Academy" column), and as a third button on the record strip. |
 | 2.24.0 | 14 Sep 2026 | **contact@ludifu.com added site-wide** (12 pages) — site previously had zero email addresses, blocking investors, placement cells and press who will not use WhatsApp for first contact. Added to Organization schema. **New page: `press.html`** — all coverage with dates, page numbers and live links where available. Research surfaced a **7th publication (SMEStreet)** and recovered the LBB and BW Disrupt URLs. Count corrected 6→8 across founder.html. `/media` redirects here. **Decision: `ventures.html` dropped as redundant** — founder.html#ventures plus the homepage record strip already cover it. |
@@ -355,4 +356,4 @@ cd .. && zip -r ludifu-site-v2.5.0.zip ludifu-site -x "*.DS_Store"
 
 ---
 
-*End of handover — LUDIFU Website v2.25.0*
+*End of handover — LUDIFU Website v2.25.1*
