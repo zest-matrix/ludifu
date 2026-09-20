@@ -336,6 +336,9 @@ When bumping: update `VERSION` file, the banner comment in every HTML file, `<me
 ## 10. Quick Commands
 
 ```bash
+# RUN THIS AFTER EVERY EDIT — catches unclosed <script>, dead handlers, truncation
+node smoke-test.js
+
 # Validate all JSON-LD on a page
 python3 -c "
 import re,json
