@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     LUDIFU WEBSITE  ·  v2.26.1  ·  2026-09-12
+     LUDIFU WEBSITE  ·  v2.27.0  ·  2026-09-12
      File: refund-policy.html
      Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
      Fonts: Cormorant Garamond (display) + Outfit (body)
@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="2.26.1">
+<meta name="version" content="2.27.0">
 <meta name="build-date" content="2026-09-12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Refund & Cancellation Policy — LUDIFU</title>
@@ -165,20 +165,25 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
   }
 </style>
 
-<!-- ══════════════════════════════════════════════════════════
-     GOOGLE ANALYTICS 4 — NOT YET ACTIVE
-     Replace G-XXXXXXXXXX with your real Measurement ID from
-     analytics.google.com, then uncomment the block below.
-     Leaving a placeholder ID active would send data nowhere.
-     ══════════════════════════════════════════════════════════
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<!-- Google Analytics 4 — G-6D5FNQ9FSD (property: GA4: Ludifu.com) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6D5FNQ9FSD"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', 'G-6D5FNQ9FSD');
+  /* Key actions, sent as GA4 events */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a,button') : null;
+    if(!a) return;
+    var href = a.getAttribute('href') || '';
+    var label = (a.textContent || '').replace(/\s+/g,' ').trim().slice(0,60);
+    if(href.indexOf('wa.me/') > -1)            gtag('event','whatsapp_click',{link_text:label, page:location.pathname});
+    else if(href.indexOf('mailto:') === 0)     gtag('event','email_click',{link_text:label, page:location.pathname});
+    else if(href.indexOf('calendly.com') > -1) gtag('event','demo_click',{link_text:label, page:location.pathname});
+    else if(a.classList.contains('copy-btn'))  gtag('event','copy_text',{item:label, page:location.pathname});
+  }, true);
 </script>
--->
 </head>
 <body>
 <a href="#main-content"
