@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     LUDIFU WEBSITE  ·  v2.27.0  ·  2026-09-12
+     LUDIFU WEBSITE  ·  v2.28.0  ·  2026-09-12
      File: careers.html
      Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
      Fonts: Cormorant Garamond (display) + Outfit (body)
@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="2.27.0">
+<meta name="version" content="2.28.0">
 <meta name="build-date" content="2026-09-12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Careers & Internships | LUDIFU, Mumbai</title>
@@ -226,6 +226,12 @@ nav{position:sticky;top:0;z-index:300;background:rgba(250,248,244,0.95);backdrop
 .field-error::before{content:'!';display:inline-flex;align-items:center;justify-content:center;
   width:15px;height:15px;border-radius:50%;background:#c0392b;color:#fff;
   font-size:.68rem;font-weight:700;flex-shrink:0;margin-top:1px}
+
+/* FAMILY BACKGROUND */
+.family-note{background:var(--cream);border:1px solid var(--border);border-left:3px solid var(--gold);
+  border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:20px;font-size:.86rem;
+  color:var(--ink2);line-height:1.75}
+.family-note strong{display:block;color:var(--ink);margin-bottom:4px}
 
 /* ACADEMIC CRITERIA */
 .criteria-box{background:var(--forest-lt);border:1px solid rgba(44,95,63,.22);
@@ -776,6 +782,28 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
         </div>
       </div>
 
+      <div id="familyBlock">
+        <div class="form-section-label">Family Background</div>
+        <div class="family-note">
+          <strong>A routine first-round question — nothing to worry about.</strong>
+          We ask every internship applicant the same three things, simply so the first conversation starts with some context about you. There are no right or wrong answers, and it has no bearing on the criteria above. A one-line answer for each is plenty.
+        </div>
+        <div class="form-row-2">
+          <div class="field">
+            <label for="f_father">What does your father do? <span class="req">*</span></label>
+            <input type="text" id="f_father" placeholder="e.g. Runs a textile business · Bank manager · Retired">
+          </div>
+          <div class="field">
+            <label for="f_mother">What does your mother do? <span class="req">*</span></label>
+            <input type="text" id="f_mother" placeholder="e.g. Homemaker · Teacher · Chartered Accountant">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f_siblings">Siblings, if any — and what they do <span class="opt">optional</span></label>
+          <input type="text" id="f_siblings" placeholder="e.g. Elder sister, software engineer · Younger brother in 10th · None">
+        </div>
+      </div>
+
       <div class="field">
         <label>Which shift suits you? <span class="req">*</span></label>
         <div class="radio-row">
@@ -897,11 +925,11 @@ Apply here: https://ludifu.com/careers</div>
       <div class="faq-a">Yes — a completion certificate and a letter of recommendation are provided at the end of a satisfactorily completed internship.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" id="faq-shifts">I am still studying — can I work around my college schedule?<a class="faq-link" href="#faq-college-schedule" onclick="copyAnchor(event,'faq-college-schedule')" title="Copy link to this question">🔗</a></div>
+      <div class="faq-q" id="faq-shifts">I am still studying — can I work around my college schedule?<a class="faq-link" href="#faq-travel" onclick="copyAnchor(event,'faq-travel')" title="Copy link to this question">🔗</a></div>
       <div class="faq-a">Yes. There are two shifts — <strong>10:30 AM to 7:30 PM</strong> at ₹10,000–12,000 a month, or <strong>12:30 PM to 7:30 PM</strong> at ₹6,000–8,000. Pick whichever fits around lectures and practicals. The form asks for your college timings precisely so we can plan around them.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" id="faq-college-schedule">Why do you ask about travel time?<a class="faq-link" href="#faq-shifts" onclick="copyAnchor(event,'faq-shifts')" title="Copy link to this question">🔗</a></div>
+      <div class="faq-q" id="faq-travel">Why do you ask about travel time?<a class="faq-link" href="#faq-shifts" onclick="copyAnchor(event,'faq-shifts')" title="Copy link to this question">🔗</a></div>
       <div class="faq-a">Because it is the single most common reason people leave in the first month. A 90-minute each-way commute sounds manageable in September and stops being manageable by October. We would rather know upfront and plan around it than lose you three weeks in.</div>
     </div>
     <div class="faq-item">
@@ -909,7 +937,11 @@ Apply here: https://ludifu.com/careers</div>
       <div class="faq-a">Apply anyway, and use the last box on the form to tell us what we would miss. The 80% mark is what we look for, not a wall — it exists because consistency across school years has predicted how people do here better than any single final score. If you fall short but have a reason we should look past it, say so plainly and we will read it.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" id="faq-travel">Who do I actually report to?<a class="faq-link" href="#faq-travel" onclick="copyAnchor(event,'faq-travel')" title="Copy link to this question">🔗</a></div>
+      <div class="faq-q" id="faq-family">Why do you ask about my family?<a class="faq-link" href="#faq-family" onclick="copyAnchor(event,'faq-family')" title="Copy link to this question">🔗</a></div>
+      <div class="faq-a">It is a standard first-round question we ask every internship applicant — nothing more. It gives the first conversation a starting point and helps us get to know you as a person rather than a CV. It is not scored and plays no part in the academic criteria. A short answer is completely fine.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" id="faq-reporting">Who do I actually report to?<a class="faq-link" href="#faq-reporting" onclick="copyAnchor(event,'faq-reporting')" title="Copy link to this question">🔗</a></div>
       <div class="faq-a">Directly to the Founder, or to whoever the Founder designates for your specific role. There is no additional management layer at LUDIFU's current size.</div>
     </div>
   </div>
@@ -1022,6 +1054,9 @@ function preselectRole(role){
 }
 
 function toggleStudentFields(){
+  var jtEl = document.querySelector('input[name="jobtype"]:checked');
+  var fb = document.getElementById('familyBlock');
+  if(fb) fb.style.display = (jtEl && jtEl.value === 'Internship') ? 'block' : 'none';
   var st = document.querySelector('input[name="status"]:checked').value;
   var studying = (st === 'Currently studying');
   var grad     = (st === 'Recently graduated');
@@ -1187,6 +1222,10 @@ function sendApplication(){
     required.push(['f_collegeloc','your college location']);
     required.push(['f_year','which year you are in']);
   }
+  if(jt === 'Internship'){
+    required.push(['f_father','what your father does']);
+    required.push(['f_mother','what your mother does']);
+  }
   if(working){
     required.push(['f_timings','your work timings']);
   }
@@ -1277,6 +1316,11 @@ function sendApplication(){
   });
   L.push(line('Academics', acad.length ? acad.join(' | ') : 'To be shared'));
 
+  if(jt === 'Internship'){
+    L.push(line('Father', v('f_father')));
+    L.push(line('Mother', v('f_mother')));
+    L.push(line('Siblings', v('f_siblings') || 'Not mentioned'));
+  }
   L.push(line('Area of Residence', v('f_area')));
   var shiftEl = document.querySelector('input[name="shift"]:checked');
   if(shiftEl) L.push(line('Preferred Shift', shiftEl.value));
