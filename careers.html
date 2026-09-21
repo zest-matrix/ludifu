@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     LUDIFU WEBSITE  ·  v2.28.0  ·  2026-09-12
+     LUDIFU WEBSITE  ·  v2.29.0  ·  2026-09-12
      File: careers.html
      Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
      Fonts: Cormorant Garamond (display) + Outfit (body)
@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="2.28.0">
+<meta name="version" content="2.29.0">
 <meta name="build-date" content="2026-09-12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Careers & Internships | LUDIFU, Mumbai</title>
@@ -226,6 +226,8 @@ nav{position:sticky;top:0;z-index:300;background:rgba(250,248,244,0.95);backdrop
 .field-error::before{content:'!';display:inline-flex;align-items:center;justify-content:center;
   width:15px;height:15px;border-radius:50%;background:#c0392b;color:#fff;
   font-size:.68rem;font-weight:700;flex-shrink:0;margin-top:1px}
+
+.field-hint{font-size:.78rem;color:var(--muted);margin-top:6px;line-height:1.5}
 
 /* FAMILY BACKGROUND */
 .family-note{background:var(--cream);border:1px solid var(--border);border-left:3px solid var(--gold);
@@ -662,6 +664,22 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
       <div class="form-section-label">About You</div>
       <div class="form-row-2">
         <div class="field">
+          <label for="f_dob">Date of birth <span class="req">*</span></label>
+          <input type="date" id="f_dob" max="2012-12-31" min="1960-01-01">
+        </div>
+        <div class="field">
+          <label for="f_gender">Gender <span class="req">*</span></label>
+          <select id="f_gender">
+            <option value="">Select…</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Non-binary</option>
+            <option>Prefer not to say</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row-2">
+        <div class="field">
           <label for="f_name">Full name <span class="req">*</span></label>
           <input type="text" id="f_name" required placeholder="As it appears on your CV">
         </div>
@@ -669,6 +687,13 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
           <label for="f_inst" id="lbl_inst">College name <span class="req">*</span></label>
           <input type="text" id="f_inst" required placeholder="Full name of your college">
         </div>
+      </div>
+
+      <div class="field" id="courseField">
+        <label for="f_course" id="lbl_course">Course / degree <span class="req">*</span></label>
+        <input type="text" id="f_course" list="courseList" autocomplete="off" placeholder="Start typing — e.g. BMS, B.Com, B.Sc IT, BE Computer">
+        <datalist id="courseList"><option value="B.Com"><option value="B.Com (Accounting & Finance) — BAF"><option value="B.Com (Banking & Insurance) — BBI"><option value="B.Com (Financial Markets) — BFM"><option value="BMS — Bachelor of Management Studies"><option value="BBA"><option value="BBA (Hons)"><option value="BMM / BAMMC — Mass Media"><option value="BA"><option value="BA (Economics)"><option value="BA (Psychology)"><option value="B.Sc"><option value="B.Sc IT"><option value="B.Sc Computer Science"><option value="B.Sc Data Science"><option value="BCA"><option value="B.E. / B.Tech — Computer Engineering"><option value="B.E. / B.Tech — Information Technology"><option value="B.E. / B.Tech — Electronics / EXTC"><option value="B.E. / B.Tech — Mechanical"><option value="B.E. / B.Tech — Other"><option value="B.Des"><option value="BHM — Hotel Management"><option value="CA (pursuing)"><option value="CS (pursuing)"><option value="CMA (pursuing)"><option value="M.Com"><option value="MBA / PGDM"><option value="MMS"><option value="MCA"><option value="M.Sc"><option value="M.Tech"><option value="Diploma"></datalist>
+        <div class="field-hint">Pick a suggestion or type your own — include your specialisation if you have one.</div>
       </div>
 
       <div class="form-row-2">
@@ -703,7 +728,17 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
           </div>
         </div>
 
-        
+        <div class="form-row-2">
+          <div class="field">
+            <label for="f_start">When can you start? <span class="req">*</span></label>
+            <input type="text" id="f_start" placeholder="e.g. Immediately · 1st October · after 15 Nov">
+          </div>
+          <div class="field">
+            <label for="f_exams">Exams or college commitments in the next 3 months? <span class="req">*</span></label>
+            <input type="text" id="f_exams" placeholder="e.g. None · Semester exams 10–25 Nov · Viva in Dec">
+          </div>
+        </div>
+        <p class="form-hint" style="margin-top:-4px">The internship runs a minimum of three months, so we plan around your exam dates up front rather than find out mid-way. Having exams is fine — just tell us when.</p>
       </div>
 
       <div id="gradBlock" style="display:none">
@@ -1086,6 +1121,8 @@ function toggleStudentFields(){
   }
 
   document.getElementById('lbl_inst').innerHTML = instLabel + ' <span class="req">*</span>';
+  var lc = document.getElementById('lbl_course');
+  if(lc) lc.innerHTML = (working ? 'Highest qualification' : grad ? 'Degree completed' : 'Course / degree') + ' <span class="req">*</span>';
   document.getElementById('f_inst').placeholder = instPlaceholder;
   document.getElementById('lbl_timings').innerHTML = timeLabel + (working || studying ? ' <span class="req">*</span>' : '');
   document.getElementById('f_timings').placeholder = timePlaceholder;
@@ -1212,7 +1249,10 @@ function sendApplication(){
 
   var required = [
     ['f_role','which role you are applying for'],
+    ['f_dob','your date of birth'],
+    ['f_gender','your gender'],
     ['f_name','your full name'],
+    ['f_course', working ? 'your highest qualification' : 'your course or degree'],
     ['f_inst', instWord],
     ['f_area','your area of residence'],
     ['f_travel','your travel time']
@@ -1221,6 +1261,8 @@ function sendApplication(){
     required.push(['f_timings','your college timings']);
     required.push(['f_collegeloc','your college location']);
     required.push(['f_year','which year you are in']);
+    required.push(['f_start','when you can start']);
+    required.push(['f_exams','any exams in the next three months (write None if there are none)']);
   }
   if(jt === 'Internship'){
     required.push(['f_father','what your father does']);
@@ -1281,12 +1323,19 @@ function sendApplication(){
   L.push('Current status: ' + st);
   L.push('');
   L.push(line('Full Name', v('f_name')));
+  var dob = v('f_dob'), age = '';
+  if(dob){ var d=new Date(dob), t=new Date(); age=t.getFullYear()-d.getFullYear(); if(t.getMonth()<d.getMonth()||(t.getMonth()===d.getMonth()&&t.getDate()<d.getDate())) age--; }
+  if(dob){ var p=dob.split('-'); L.push(line('Date of Birth', p[2]+'/'+p[1]+'/'+p[0] + (age!=='' ? ' (age '+age+')' : ''))); }
+  L.push(line('Gender', v('f_gender')));
+  L.push(line(working ? 'Highest Qualification' : 'Course', v('f_course')));
 
   if(studying){
     L.push(line('College', v('f_inst')));
     L.push(line('College Location', v('f_collegeloc')));
     L.push(line('Year of Study', v('f_year')));
     L.push(line('College Timings', v('f_timings')));
+    L.push(line('Can Start', v('f_start')));
+    L.push(line('Exams (next 3 months)', v('f_exams')));
   } else if(grad){
     L.push(line('College', v('f_inst')));
     if(v('f_gradyear'))     L.push(line('Graduated', v('f_gradyear')));
