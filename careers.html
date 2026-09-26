@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     LUDIFU WEBSITE  ·  v2.29.1  ·  2026-09-12
+     LUDIFU WEBSITE  ·  v2.30.0  ·  2026-09-26
      File: careers.html
      Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
      Fonts: Cormorant Garamond (display) + Outfit (body)
@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="2.29.1">
+<meta name="version" content="2.30.0">
 <meta name="build-date" content="2026-09-12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Careers & Internships | LUDIFU, Mumbai</title>
@@ -25,16 +25,18 @@
 <meta property="og:type"         content="website"/>
 <meta property="og:url"          content="https://www.ludifu.com/careers.html"/>
 <meta property="og:title"        content="Careers at LUDIFU — Learn How a Company Actually Runs"/>
-<meta property="og:description"  content="Open internships across Clicarity and WA.Expert — Automation, Web Development, Founder's Office, Operations, Product. Mumbai. Apply via WhatsApp."/>
-<meta property="og:image"        content="https://www.ludifu.com/og-image.jpg"/>
+<meta property="og:description"  content="Internships and full-time roles across Clicarity and WA.Expert — Automation, Web Development, Founder's Office, Operations, Product. On-site in Lower Parel West, Mumbai. Apply on WhatsApp in two minutes."/>
+<meta property="og:image"        content="https://www.ludifu.com/og-careers.jpg"/>
+<meta property="og:image:alt"    content="LUDIFU is hiring — internships and full-time roles in Automation, Web Development, Founder&#39;s Office, Operations and Product. On-site, Lower Parel West, Mumbai."/>
 <meta property="og:image:width"  content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:locale"       content="en_IN"/>
 <meta property="og:site_name"    content="LUDIFU"/>
 <meta name="twitter:card"        content="summary_large_image"/>
 <meta name="twitter:title"       content="Careers at LUDIFU — Learn How a Company Actually Runs"/>
-<meta name="twitter:description" content="Open internships across Clicarity and WA.Expert. Mumbai. Apply via WhatsApp."/>
-<meta name="twitter:image"       content="https://www.ludifu.com/og-image.jpg"/>
+<meta name="twitter:description" content="Internships and full-time roles across Clicarity and WA.Expert. On-site in Lower Parel West, Mumbai. Apply on WhatsApp."/>
+<meta name="twitter:image"       content="https://www.ludifu.com/og-careers.jpg"/>
+<meta name="twitter:image:alt"   content="LUDIFU is hiring — internships and full-time roles, on-site in Lower Parel West, Mumbai."/>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/></noscript>
@@ -228,6 +230,17 @@ nav{position:sticky;top:0;z-index:300;background:rgba(250,248,244,0.95);backdrop
   font-size:.68rem;font-weight:700;flex-shrink:0;margin-top:1px}
 
 .field-hint{font-size:.78rem;color:var(--muted);margin-top:6px;line-height:1.5}
+
+/* ENTRANCE EXAMS */
+.exam-row{display:grid;grid-template-columns:1fr 1.3fr;gap:12px;margin-bottom:10px}
+.exam-row input{font-family:'Outfit',sans-serif;font-size:.92rem;color:var(--ink);
+  padding:11px 13px;border:1.5px solid var(--border);border-radius:8px;background:var(--cream);width:100%}
+.exam-row input:focus{outline:none;border-color:var(--forest);background:var(--white)}
+.exam-add{background:none;border:1.5px dashed var(--border);color:var(--muted);cursor:pointer;
+  font-family:'Outfit',sans-serif;font-size:.82rem;font-weight:500;padding:10px 18px;
+  border-radius:8px;transition:border-color .2s,color .2s}
+.exam-add:hover{border-color:var(--forest);color:var(--forest)}
+@media(max-width:820px){.exam-row{grid-template-columns:1fr;gap:8px;margin-bottom:16px}}
 
 /* FAMILY BACKGROUND */
 .family-note{background:var(--cream);border:1px solid var(--border);border-left:3px solid var(--gold);
@@ -800,8 +813,12 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
         </div>
 
         <div id="belowNote" class="below-note" style="display:none">
-          <strong>One or more scores are below what we usually look for.</strong><br>
-          You are still welcome to apply. Use the box at the bottom to tell us what we would miss if we passed on you — we do read those.
+          <strong id="belowHead">One score is below what we usually look for.</strong>
+          <p style="margin:6px 0 0">This does not rule you out. Marks dip for all sorts of reasons — an illness, a difficult year at home, a subject that never clicked, a board that marks harshly. Tell us in a line or two and we will read it properly.</p>
+          <div class="field" style="margin-top:14px;margin-bottom:0">
+            <label for="f_lowreason">Why is this lower than your other years? <span class="req">*</span></label>
+            <textarea id="f_lowreason" rows="3" placeholder="e.g. I had typhoid through my 10th prelims and boards. My 11th and 12th went back to the 85%+ range."></textarea>
+          </div>
         </div>
       </div>
 
@@ -816,6 +833,30 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
             <input type="text" id="f_notice" placeholder="e.g. Immediate, 30 days">
           </div>
         </div>
+      </div>
+
+      <div id="examBlock">
+        <div class="form-section-label">Entrance &amp; Competitive Exams <span class="opt">optional</span></div>
+        <p class="form-hint" style="margin-top:-6px">Only if you have given any. Add the score, percentile or rank exactly as it appears on your result — whichever your exam reports.</p>
+        <div id="examRows">
+          <div class="exam-row">
+            <input type="text" class="exam-name" list="examList" autocomplete="off" placeholder="Exam — e.g. MHT-CET">
+            <input type="text" class="exam-score" placeholder="Score / percentile / rank — e.g. 96.4 percentile">
+          </div>
+          <div class="exam-row">
+            <input type="text" class="exam-name" list="examList" autocomplete="off" placeholder="Exam — e.g. JEE Main">
+            <input type="text" class="exam-score" placeholder="Score / percentile / rank">
+          </div>
+        </div>
+        <datalist id="examList">
+          <option value="MHT-CET"><option value="MAH-CET (MBA)"><option value="JEE Main"><option value="JEE Advanced">
+          <option value="NEET"><option value="CAT"><option value="XAT"><option value="CMAT"><option value="NMAT">
+          <option value="SNAP"><option value="IPMAT"><option value="CUET"><option value="BITSAT"><option value="GATE">
+          <option value="CA Foundation"><option value="CA Intermediate"><option value="CS Executive"><option value="SAT">
+          <option value="GRE"><option value="GMAT"><option value="IELTS"><option value="TOEFL"><option value="Olympiad">
+          <option value="NTSE">
+        </datalist>
+        <button type="button" class="exam-add" onclick="addExamRow()">+ Add another exam</button>
       </div>
 
       <div id="familyBlock">
@@ -1206,12 +1247,50 @@ function checkMark(key, minPct){
   updateBelowNote();
 }
 
+function addExamRow(){
+  var wrap = document.getElementById('examRows');
+  if(!wrap || wrap.children.length >= 8) return;
+  var row = document.createElement('div');
+  row.className = 'exam-row';
+  row.innerHTML = '<input type="text" class="exam-name" list="examList" autocomplete="off" placeholder="Exam">' +
+                  '<input type="text" class="exam-score" placeholder="Score / percentile / rank">';
+  wrap.appendChild(row);
+  row.querySelector('.exam-name').focus();
+}
+
+function collectExams(){
+  var out = [];
+  document.querySelectorAll('#examRows .exam-row').forEach(function(r){
+    var n = r.querySelector('.exam-name').value.trim();
+    var s = r.querySelector('.exam-score').value.trim();
+    if(n && s) out.push(n + ': ' + s);
+    else if(n) out.push(n + ': score not given');
+  });
+  return out;
+}
+
 function updateBelowNote(){
   var any = false;
   ['8','9','10','cgpa'].forEach(function(k){
     var r = document.getElementById('row_'+k);
     if(r && r.classList.contains('fail')) any = true;
   });
+  var low = [];
+  ['8','9','10','cgpa'].forEach(function(k){
+    var r = document.getElementById('row_'+k);
+    if(r && r.classList.contains('fail')){
+      var lbl = r.querySelector('label');
+      low.push(lbl ? lbl.textContent.replace(/\s+/g,' ').trim() : k);
+    }
+  });
+  var head = document.getElementById('belowHead');
+  if(head){
+    head.textContent = low.length > 1
+      ? low.length + ' of your scores are below what we usually look for.'
+      : low.length === 1
+        ? 'Your ' + low[0] + ' score is below what we usually look for.'
+        : 'One score is below what we usually look for.';
+  }
   var n = document.getElementById('belowNote');
   if(n) n.style.display = any ? 'block' : 'none';
 }
@@ -1258,6 +1337,9 @@ function sendApplication(){
     ['f_area','your area of residence'],
     ['f_travel','your travel time']
   ];
+  if(document.getElementById('belowNote') && document.getElementById('belowNote').style.display === 'block'){
+    required.push(['f_lowreason','a line on why that score is lower than your other years']);
+  }
   if(studying){
     required.push(['f_timings','your college timings']);
     required.push(['f_collegeloc','your college location']);
@@ -1365,6 +1447,9 @@ function sendApplication(){
     if(m) acad.push(m);
   });
   L.push(line('Academics', acad.length ? acad.join(' | ') : 'To be shared'));
+  if(v('f_lowreason')) L.push(line('Reason for lower score', v('f_lowreason')));
+  var exams = collectExams();
+  if(exams.length) L.push(line('Entrance Exams', exams.join(' | ')));
 
   if(jt === 'Internship'){
     L.push(line('Father', v('f_father')));

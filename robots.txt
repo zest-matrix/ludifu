@@ -1,5 +1,5 @@
 # robots.txt — LUDIFU (ludifu.com)
-# Generated: March 2026
+# Generated: March 2026 · Updated: September 2026
 
 User-agent: *
 Allow: /
@@ -9,6 +9,9 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /checkout/
 Disallow: /thankyou/
+
+# Build sources for the social cards — not part of the site
+Disallow: /social-cards/
 
 # Sitemap location
 Sitemap: https://www.ludifu.com/sitemap.xml

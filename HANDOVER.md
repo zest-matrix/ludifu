@@ -1,7 +1,7 @@
 # LUDIFU Website — Handover Document
 
-**Version:** 2.25.1
-**Last updated:** 12 September 2026
+**Version:** 2.30.0
+**Last updated:** 26 September 2026
 **Owner:** Puneet Rawat, Founder — LUDIFU, Mumbai
 **Contact:** +91 98678 00451 (WhatsApp)
 
@@ -63,6 +63,13 @@ LUDIFU ("Let Us Do It For U") is a Mumbai-based group of ventures founded by Pun
 ├── shipping-policy.html    Shipping Policy
 ├── 404.html                Not found page
 ├── favicon.svg             Green square, gold "L"
+├── logo.png                512×512 square logo — used by Organization schema
+├── og-image.jpg/.webp      Sitewide social card (company). index, academy, photobooks,
+│                           press, all policies, 404
+├── og-founder.jpg/.webp    Founder social card. founder.html, timeline.html
+├── og-careers.jpg/.webp    Careers social card. careers.html
+├── founder-photo.jpg/.webp Circular portrait, 640×640 (source for og-founder)
+├── cock-poster.jpg/.webp   Play poster, founder.html#theplay
 ├── robots.txt
 ├── sitemap.xml
 ├── _headers                Cloudflare security headers
@@ -255,10 +262,60 @@ These must be resolved before or shortly after launch.
 
 ---
 
+### Social cards (og:image) — the rule
+
+Three cards, one per audience. **Never point a page at the wrong one, and never
+let a card carry a number the site contradicts** — the card is what people see
+in WhatsApp and LinkedIn before they read a word of the page.
+
+| Card | Pages | What it says |
+|---|---|---|
+| `og-careers.jpg` | careers.html | Now Hiring · the five real roles · 4,500+ interns · Apply on WhatsApp |
+| `og-founder.jpg` | founder.html, timeline.html | Portrait · fifteen ventures · 2007 / ₹0 / 4,500+ |
+| `og-image.jpg` | everything else (9 pages) | Company card · tagline · four ventures · 15 since 2007 |
+
+Rules:
+- Every page needs **four** tags in step: `og:image`, `twitter:image` (identical
+  URLs, absolute, `https://www.ludifu.com/…`) and `og:image:alt`,
+  `twitter:image:alt`. All twelve pages have them as of v2.30.0.
+- All cards are **1200×630**. The `og:image:width` / `:height` tags say so —
+  change one and you must change the other.
+- **Do not use an OG card as the Organization schema `logo`.** That is what
+  `logo.png` (512×512) is for. This was wrong from v2.1.0 to v2.29.1.
+- Edit the card in `social-cards/*.html`, then `cd social-cards && node render.js`.
+  It rewrites every `.jpg` / `.webp` / `.png` in the site root. Fonts are the
+  **local** Lora and Poppins, not the site's Cormorant Garamond and Outfit —
+  Google Fonts is blocked in the sandbox, so a swap will silently fall back.
+- `social-cards/` is build-only and is disallowed in `robots.txt`. Harmless if
+  deployed; delete it before upload if you would rather it not exist.
+- After any change, run the OG audit — it catches a mismatched pair, a missing
+  alt, or a card that points at a file that does not exist:
+
+```js
+// og-audit.js — node og-audit.js
+const { chromium } = require('playwright'); const fs = require('fs');
+(async () => { const b = await chromium.launch(); const p = await b.newPage(); let bad = 0;
+  for (const f of fs.readdirSync('.').filter(f=>f.endsWith('.html'))) {
+    await p.goto('file://' + process.cwd() + '/' + f);
+    const m = await p.evaluate(()=>({ ogi:(document.querySelector('meta[property="og:image"]')||{}).content,
+      twi:(document.querySelector('meta[name="twitter:image"]')||{}).content,
+      oga:(document.querySelector('meta[property="og:image:alt"]')||{}).content,
+      twa:(document.querySelector('meta[name="twitter:image:alt"]')||{}).content }));
+    const img = (m.ogi||'').split('/').pop();
+    const ok = m.ogi && m.ogi===m.twi && m.oga && m.twa && fs.existsSync(img);
+    if(!ok) bad++; console.log((ok?'  ✓ ':'  ✗ ') + f.padEnd(22) + (img||'NONE')); }
+  console.log(bad ? `\n  ${bad} page(s) with problems` : '\n  All OG tags consistent ✓');
+  await b.close(); })();
+```
+
+---
+
 ## 8. Version History
 
 | Version | Date | Changes |
 |---|---|---|
+| **2.30.0** | 26 Sep 2026 | **Three social cards replace one.** The single `og-image.jpg` — a founder portrait reading "Seventeen ventures" — was the WhatsApp/LinkedIn preview for every page, including careers, and its count contradicted the site (fifteen). Split into three purpose-built 1200×630 cards rendered from HTML: **`og-careers.jpg`** (Now Hiring, the five real roles, 4,500+ interns, "Apply on WhatsApp", Lower Parel West) on careers.html; **`og-founder.jpg`** (portrait, corrected to fifteen, 2007 / ₹0 / 4,500+) on founder.html and timeline.html; **`og-image.jpg`** rebuilt as a **company** card (tagline, four ventures, "15 ventures since 2007") for the other nine pages. `og:image:alt` and `twitter:image:alt` added everywhere — previously absent site-wide. New **`logo.png`** (512×512) now backs the Organization schema `logo`, which had been pointing at a 1200×630 OG card. **Careers form:** below-minimum scores now trigger an instant, named prompt ("Your 9th Standard score is below what we usually look for") with a **required** reason field, worded so the applicant is invited to explain rather than rejected; the reason travels in the WhatsApp message. New optional **Entrance & Competitive Exams** block directly under the percentages — two rows by default, "+ Add another exam" up to eight, `<datalist>` of 24 Indian and international exams (MHT-CET, JEE, NEET, CAT, XAT, CUET, GATE, CA, SAT, GRE, GMAT, IELTS…). **Stale fact swept:** "seventeen years" corrected to "nearly two decades" / "since 2007" in five places across founder.html and timeline.html — 2007→2026 is nineteen years, so the number is now written to stop going stale. |
+| 2.26.0 – 2.29.1 | 17–24 Sep 2026 | *Reconstructed summary — these versions predate this changelog entry.* Careers form deepened: family-background questions for internship applicants (father, mother, siblings) with a note explaining these are routine first-round questions; course/degree as a 33-entry `<datalist>` rather than a mega dropdown; date of birth (with age computed into the message) and gender; expected start date and upcoming exams. Careers hero reframed company-first. FAQ questions deduplicated in 2.26.0, which **mislabelled the anchors** (`#faq-travel` opened the reporting question) — fixed in 2.28.0. GA4 (`G-6D5FNQ9FSD`) switched on across all pages with custom events, and the CSP `connect-src` widened to `*.google-analytics.com` / `*.analytics.google.com` / googletagmanager.com, which would otherwise have silently blocked every hit. Founder page: `#press-kit` copy-ready bios and `#investor-brief`; side rail nav. |
 | **2.25.1** | 16 Sep 2026 | **Academic checker rebuilt.** Unit dropdowns removed (friction) and replaced with auto-detection: a value ≤10 reads as CGPA, >10 as percentage, shown as a suffix inside the field. Feedback made loud — the whole input turns green or amber with a message beside it ("Meets our criteria" / "Below our usual minimum of 80%"); the previous single-character flag was invisible. **All four conflicts resolved per client:** stipend restored for internships only (₹10–12k full shift, ₹6–8k short shift), two shifts documented across pills, logistics, FAQ and the consent line, share message rebuilt with the five real site roles, and JobPosting schema now carries educationRequirements, baseSalary and workHours. |
 | 2.25.0 | 16 Sep 2026 | Careers: **academic criteria published on the form** (80% in 8th/9th/10th, 8.50 CGPA) as a visible four-tile box. Each mark now has a **unit dropdown** (% / GPA / CGPA / Grade) so students enter what their marksheet says rather than converting. Live ✓ / ! flags per field; below-threshold applicants are not blocked but are invited to make their case, and the WhatsApp message marks the value "(below stated minimum)" for fast triage. New **#share** section with a copy-ready referral message for students to forward. **⚠ Four unresolved conflicts between the referral message and the site: stipend (removed from site in v2.5.0, present in message), two shift timings (site has one), six roles in message vs five different ones on site, and the 80% criteria.** |
 | 2.24.2 | 16 Sep 2026 | **Reverted an over-eager nav trim.** v2.24.1 cut the homepage nav from 8 links to 5, removing Academy, Clicarity and PhotoBooks — by applying the 5-link rule written for academy.html, whose absolutely-positioned centre logo caused the original collision. index.html never had that layout and 8 links fit with room to spare. Restored all 8 with Press included; "Our Story" dropped as it is a same-page anchor. Handover rule rewritten from a fixed number to a per-page measurement. |
