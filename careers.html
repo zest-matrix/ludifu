@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     LUDIFU WEBSITE  ·  v2.30.0  ·  2026-09-26
+     LUDIFU WEBSITE  ·  v2.30.1  ·  2026-09-26
      File: careers.html
      Stack: static HTML/CSS/JS · Cloudflare Pages · no build step
      Fonts: Cormorant Garamond (display) + Outfit (body)
@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="2.30.0">
+<meta name="version" content="2.30.1">
 <meta name="build-date" content="2026-09-12">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Careers & Internships | LUDIFU, Mumbai</title>
@@ -216,11 +216,13 @@ nav{position:sticky;top:0;z-index:300;background:rgba(250,248,244,0.95);backdrop
 
 
 /* FIELD-LEVEL VALIDATION */
-.field.has-error label{color:#b3401c}
+.field.has-error label,.acad-row.has-error label{color:#b3401c}
 .field.has-error input[type=text],
 .field.has-error select,
-.field.has-error textarea{border-color:#c0392b;background:#fdf3f1}
+.field.has-error textarea,
+.acad-row.has-error input[type=text]{border-color:#c0392b;background:#fdf3f1}
 .field.has-error input:focus,
+.acad-row.has-error input:focus,
 .field.has-error select:focus{border-color:#c0392b;background:#fff;
   box-shadow:0 0 0 3px rgba(192,57,43,.12)}
 .field-error{font-size:.8rem;color:#b3401c;margin-top:6px;line-height:1.5;
@@ -777,6 +779,7 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
             <div class="cb-item"><span class="cb-n">80%</span><span class="cb-l">8th Standard</span></div>
             <div class="cb-item"><span class="cb-n">80%</span><span class="cb-l">9th Standard</span></div>
             <div class="cb-item"><span class="cb-n">80%</span><span class="cb-l">10th Standard</span></div>
+            <div class="cb-item"><span class="cb-n">80%</span><span class="cb-l">12th Standard</span></div>
             <div class="cb-item"><span class="cb-n">8.50</span><span class="cb-l">Current CGPA</span></div>
           </div>
           <p class="cb-note">Type whatever is on your marksheet and we will work out the rest. <strong>86</strong> reads as 86%, <strong>8.6</strong> reads as a CGPA out of 10. No conversion needed.</p>
@@ -802,7 +805,7 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:88px}
 
         <div class="acad-row" id="row_12">
           <label for="f_12">12th Standard <span class="opt">if applicable</span></label>
-          <div class="acad-input"><input type="text" id="f_12" inputmode="decimal" placeholder="86  or  8.6" oninput="checkMark('12',0)"><span class="acad-unit" id="unit_12"></span></div>
+          <div class="acad-input"><input type="text" id="f_12" inputmode="decimal" placeholder="86  or  8.6" oninput="checkMark('12',80)"><span class="acad-unit" id="unit_12"></span></div>
           <span class="acad-msg" id="msg_12"></span>
         </div>
 
@@ -1269,37 +1272,33 @@ function collectExams(){
   return out;
 }
 
+var ACAD_KEYS   = ['8','9','10','12','cgpa'];
+var ACAD_LABELS = {'8':'8th Standard','9':'9th Standard','10':'10th Standard',
+                   '12':'12th Standard','cgpa':'current CGPA'};
+
 function updateBelowNote(){
-  var any = false;
-  ['8','9','10','cgpa'].forEach(function(k){
-    var r = document.getElementById('row_'+k);
-    if(r && r.classList.contains('fail')) any = true;
-  });
   var low = [];
-  ['8','9','10','cgpa'].forEach(function(k){
+  ACAD_KEYS.forEach(function(k){
     var r = document.getElementById('row_'+k);
-    if(r && r.classList.contains('fail')){
-      var lbl = r.querySelector('label');
-      low.push(lbl ? lbl.textContent.replace(/\s+/g,' ').trim() : k);
-    }
+    if(r && r.classList.contains('fail')) low.push(ACAD_LABELS[k]);
   });
   var head = document.getElementById('belowHead');
   if(head){
-    head.textContent = low.length > 1
-      ? low.length + ' of your scores are below what we usually look for.'
-      : low.length === 1
-        ? 'Your ' + low[0] + ' score is below what we usually look for.'
-        : 'One score is below what we usually look for.';
+    head.textContent =
+      low.length > 2  ? low.length + ' of your scores are below what we usually look for.' :
+      low.length === 2 ? 'Your ' + low[0] + ' and ' + low[1] + ' scores are below what we usually look for.' :
+      low.length === 1 ? 'Your ' + low[0] + ' score is below what we usually look for.' :
+                         'One score is below what we usually look for.';
   }
   var n = document.getElementById('belowNote');
-  if(n) n.style.display = any ? 'block' : 'none';
+  if(n) n.style.display = low.length ? 'block' : 'none';
 }
 
 function v(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
 
 /* clear the red state as soon as the person starts fixing it */
 document.addEventListener('input', function(e){
-  var wrap = e.target.closest ? e.target.closest('.field.has-error') : null;
+  var wrap = e.target.closest ? (e.target.closest('.field.has-error') || e.target.closest('.acad-row.has-error')) : null;
   if(wrap && e.target.value.trim()){
     wrap.classList.remove('has-error');
     var m = wrap.querySelector('.field-error');
@@ -1307,7 +1306,7 @@ document.addEventListener('input', function(e){
   }
 }, true);
 document.addEventListener('change', function(e){
-  var wrap = e.target.closest ? e.target.closest('.field.has-error') : null;
+  var wrap = e.target.closest ? (e.target.closest('.field.has-error') || e.target.closest('.acad-row.has-error')) : null;
   if(wrap && e.target.value){
     wrap.classList.remove('has-error');
     var m = wrap.querySelector('.field-error');
@@ -1337,6 +1336,17 @@ function sendApplication(){
     ['f_area','your area of residence'],
     ['f_travel','your travel time']
   ];
+  var acadOn = document.getElementById('academicBlock');
+  acadOn = acadOn && acadOn.style.display !== 'none';
+  if(acadOn){
+    required.push(['f_8','your 8th standard result']);
+    required.push(['f_9','your 9th standard result']);
+    required.push(['f_10','your 10th standard result']);
+    // A first-year student has no result yet; everyone else does.
+    if(!(studying && v('f_year') === '1st Year')){
+      required.push(['f_cgpa','your current CGPA']);
+    }
+  }
   if(document.getElementById('belowNote') && document.getElementById('belowNote').style.display === 'block'){
     required.push(['f_lowreason','a line on why that score is lower than your other years']);
   }
@@ -1356,7 +1366,7 @@ function sendApplication(){
   }
 
   // clear any previous error state
-  document.querySelectorAll('.field.has-error').forEach(function(f){
+  document.querySelectorAll('.field.has-error, .acad-row.has-error').forEach(function(f){
     f.classList.remove('has-error');
     var m = f.querySelector('.field-error');
     if(m) m.remove();
@@ -1380,6 +1390,25 @@ function sendApplication(){
       if(!firstBad) firstBad = el;
     }
   }
+
+  // An academic field that was filled in but does not read as a number
+  // ("NA", "awaited", a typo) cannot be checked, so it cannot be accepted.
+  ACAD_KEYS.forEach(function(k){
+    var el = document.getElementById('f_'+k);
+    if(!el) return;
+    var raw = el.value.trim().replace(/[%\s]/g,'');
+    if(raw === '' || !isNaN(parseFloat(raw)) && isFinite(raw)) return;
+    missingCount++;
+    var wrap = el.closest('.field') || el.closest('.acad-row') || el.parentNode;
+    wrap.classList.add('has-error');
+    if(!wrap.querySelector('.field-error')){
+      var m = document.createElement('div');
+      m.className = 'field-error';
+      m.textContent = 'Please enter ' + ACAD_LABELS[k] + ' as a number — 86 for 86%, 8.6 for a CGPA.';
+      wrap.appendChild(m);
+    }
+    if(!firstBad) firstBad = el;
+  });
 
   if(missingCount){
     err.innerHTML = missingCount === 1
